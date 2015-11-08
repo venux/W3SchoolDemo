@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>结合构造函数和原型创建对象示例</title>
+    <meta charset="utf-8" />
+    <script>
+
+        //结合构造函数和原型创建对象示例
+        function CarClass1(color, price, type) {
+            this.color = color;
+            this.price = price;
+            this.type = type;
+            this.drivers = new Array("Mike", "John");
+        }
+
+        CarClass1.prototype.ShowColor = function () {
+            //alert(this.color);
+            return this.color;
+        };
+
+        function test1() {
+            var car1 = new CarClass1("yellow", 60000, "BMW");
+            var car2 = new CarClass1("red", 10000, "QQ");
+
+            car1.drivers.push("venux");
+
+            alert("Car1的drivers:" + car1.drivers.toString() + "\n" + "Car2的drivers:" + car2.drivers.toString());
+            alert("Car1的color：" + car1.ShowColor() + "\n" + "Car2的color：" + car2.ShowColor());
+        }
+
+        //动态原型
+        function CarClass2(color, price, type) {
+            this.color = color;
+            this.price = price;
+            this.type = type;
+            this.drivers = new Array("Mike", "John");
+
+            if (typeof CarClass2._initialized == "undefined") {
+                CarClass2.prototype.ShowColor = function () {
+                    return this.color;
+                }
+
+                CarClass2._initialized = true;
+            }
+        }
+
+        function test2() {
+            var car1 = new CarClass2("yellow", 60000, "BMW");
+            var car2 = new CarClass2("red", 10000, "QQ");
+
+            car1.drivers.push("venux");
+
+            alert("Car1的drivers:" + car1.drivers.toString() + "\n" + "Car2的drivers:" + car2.drivers.toString());
+            alert("Car1的color：" + car1.ShowColor() + "\n" + "Car2的color：" + car2.ShowColor());
+        }
+
+    </script>
+</head>
+<body>
+    <h1>混合的构造函数/原型方式</h1>
+    <p>
+        联合使用构造函数和原型方式，就可像用其他程序设计语言一样创建对象。这种概念非常简单，即用构造函数定义对象的所有非函数属性，用原型方式定义对象的函数属性（方法）。结果是，所有函数都只创建一次，而每个对象都具有自己的对象属性实例。
+        <br />
+        对于习惯使用其他语言的开发者来说，使用混合的构造函数/原型方式感觉不那么和谐。毕竟，定义类时，大多数面向对象语言都对属性和方法进行了视觉上的封装。
+        批评混合的构造函数/原型方式的人认为，在构造函数内部找属性，在其外部找方法的做法不合逻辑。因此，他们设计了动态原型方法，以提供更友好的编码风格。
+    </p>
+    <input type="button" value="混合的构造函数/原型方式" onclick="test1()" />
+    <hr />
+    <h1>动态原型方法</h1>
+    <p>
+        动态原型方法的基本想法与混合的构造函数/原型方式相同，即在构造函数内定义非函数属性，而函数属性则利用原型属性定义。唯一的区别是赋予对象方法的位置。
+    </p>  
+    <input type="button" value="动态原型方法" onclick="test2()" />
+    <hr />
+</body>
+</html>

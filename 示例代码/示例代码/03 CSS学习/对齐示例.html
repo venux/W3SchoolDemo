@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        #div1 {
+            border: 1px solid black;
+            background-color: red;
+            /*
+                使用 margin 属性来水平对齐,可通过将左和右外边距设置为 "auto"，来对齐块元素。
+                注释：除非已经声明了 !DOCTYPE，否则使用 margin:auto 在 IE8 以及更早的版本中是无效的。
+                把左和右外边距设置为 auto，规定的是均等地分配可用的外边距。结果就是居中的元素：
+            */
+            margin: 100px auto;
+            width: 800px;
+            height: 600px;
+        }
+
+        .divclass1 {
+            border: 1px red solid;
+            /*position: absolute;*/
+            float:left;
+            width: 100px;
+            height: 100px;
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+    </div>
+
+    <div class="divclass1"></div>
+    <div class="divclass1"></div>
+    <div class="divclass1"></div>
+</body>
+</html>

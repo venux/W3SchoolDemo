@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>函数示例</title>
+    <meta charset="utf-8" />
+    <script>
+        function argumentsTest() {
+            argumentsTestFun();
+            argumentsTestFun(1);
+            argumentsTestFun("test", 1, null, undefined, true, 0);
+        }
+
+        function argumentsTestFun() {
+            var result = "函数的参数：";
+            for (var index = 0, length = arguments.length; index < length; index++) {
+                if (index != length - 1)
+                    result += arguments[index] + ",";
+                else
+                    result += arguments[index] + "！";
+            }
+            alert(result);
+        }
+
+        function soucrecodeOfFun(fun) {
+            document.write(fun.toString());
+            document.write("<br/>");
+            document.write(fun.valueOf());
+        }
+
+    </script>
+</head>
+<body>
+    <h1>arguments对象</h1>
+    <input type="button" value="arguments对象" onclick="argumentsTest()" />
+    <hr />
+    <input type="button" value="函数源码" onclick="soucrecodeOfFun(argumentsTest)" />
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        div {
+            border: 1px red solid;
+            background-color: yellow;
+            width: 400px;
+            height: 300px;
+            margin: 100px auto;
+            transition: height 5s,width 2s,transform 10s;
+
+            /*3s延迟*/
+            transition-delay:3s;
+            /*过渡时间*/
+            /*transition-duration:5s;*/
+            /*过渡属性*/
+            /*transition-property:transform;*/
+            /*过渡类型*/
+            transition-timing-function:ease-in-out;
+        }
+
+        div:hover{
+            transform:rotate(180deg);
+            width:500px;
+            height:600px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

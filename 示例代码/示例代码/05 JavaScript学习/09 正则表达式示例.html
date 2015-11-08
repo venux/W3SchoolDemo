@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>正则表达式RegExp</title>
+    <meta charset="utf-8" />
+    <script>
+        var patt1 = new RegExp("e");
+
+        //test() 方法检索字符串中的指定值。返回值是 true 或 false。
+        document.write("e" + "-TEST:" + patt1.test("TEST") + "<br/>");
+        document.write("e" + "-TeST:" + patt1.test("TeST") + "<br/>");
+
+        //exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null。
+
+        /*
+            您可以向 RegExp 对象添加第二个参数，以设定检索。例如，如果需要找到所有某个字符的所有存在，则可以使用 "g" 参数 ("global")。    
+            在使用 "g" 参数时，exec() 的工作原理如下：
+            找到第一个 "e"，并存储其位置
+            如果再次运行 exec()，则从存储的位置开始检索，并找到下一个 "e"，并存储其位置
+        */
+        document.write("e" + "-TEST:" + patt1.exec("TEST") + "<br/>");
+        document.write("e" + "-TeST:" + patt1.exec("TeST") + "<br/>");
+    </script>
+</head>
+<body>
+    <a href="http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp">W3School 正则表达式 RegExp 对象</a>
+</body>
+</html>

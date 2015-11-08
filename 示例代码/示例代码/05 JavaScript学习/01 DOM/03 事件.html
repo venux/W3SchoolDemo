@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>事件示例</title>
+    <meta charset="utf-8" />
+    <script>
+        //页面加载
+        function load() {
+            if (navigator.cookieEnabled == true) {
+                alert("已启用cookie!");
+            } else {
+                alert("未启用cookie!");
+            }
+        }
+        //离开页面
+        function unload() {
+            //会进方法，但是无法弹出消息框
+            //alert("亲爱的，您要离开了么？");
+            console.log(Date() + "离开页面！");
+        }
+
+        function changeText(element) {
+            element.innerHTML = "Hello World!";
+        }
+
+        function upperCase(element) {
+            element.value = element.value.toUpperCase();
+        }
+
+        function mouseOver(element) {
+            element.value = "鼠标进入";
+        }
+
+        function mouseOut(element) {
+            element.value = "鼠标离开";
+        }
+
+        function mouseClick(element) {
+            element.value = "鼠标点击";
+        }
+
+        function mouseDown(element) {
+            element.value = "鼠标按下";
+        }
+
+        function mouseUp(element) {
+            element.value = "鼠标松开";
+        }
+
+        function mouseWheel(element) {
+            element.value = "鼠标滚轮";
+        }
+
+        function getKeyOfMouse(event) {
+            var btn = event.button;
+
+            if (btn == 2)
+                alert("点击了右键！");
+            else if (btn == 0)
+                alert("点击了左键！");
+            else if (btn == 1)
+                alert("点击了中键！");
+            else
+                alert("WTF,什么鬼！");
+        }
+    </script>
+
+
+</head>
+<body onload="load()" onunload="unload()">
+    <h1 onclick="this.innerHTML='谢谢!'">请点击该文本</h1>
+    <h1 onclick="changeText(this);">请点击该文本</h1>
+    <input id="btn" type="button" value="点击" />
+    <script>
+        document.getElementById("btn").onclick = function () {
+            alert(Date());
+        };
+    </script>
+
+    <input type="text" value="请输入要转换的小写字母！" onchange="upperCase(this)" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)" />
+    <input type="button" value="鼠标事件" onmousedown="mouseDown(this)" onmousewheel="mouseWheel(this)" onmouseup="mouseUp(this)" />
+
+    <input type="button" value="鼠标按键判断" onclick="getKeyOfMouse(event)" />
+
+</body>
+</html>

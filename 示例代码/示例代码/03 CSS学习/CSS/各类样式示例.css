@@ -1,0 +1,36 @@
+﻿#div1 {
+    /*外边框*/
+    margin: 10px 10px 10px 10px;
+    /*内边框*/
+    padding: 10px 10px 10px 10px;
+    border: 1px solid red;
+    min-width:1000px;
+    min-height:800px;
+    /*背景色*/
+    /*
+        background-color 不能继承，其默认值是 transparent。transparent 有“透明”之意。
+        如果一个元素没有指定背景色，那么背景就是透明的，这样其祖先元素的背景才能可见。
+    */
+    /*background-color:red;*/
+    /*背景图片*/
+    /*background-image: url("Jellyfish.jpg");*/
+    /*背景图像重复*/
+    /*background-repeat: no-repeat;*/
+    /*背景图像定位*/
+    /*background-position:top left;*/
+    /*background-position: 66% 33%;*/
+    /*background-position: center;*/
+    /*
+        背景关联
+        如果文档比较长，那么当文档向下滚动时，背景图像也会随之滚动。
+        当文档滚动到超过图像的位置时，图像就会消失。
+        可通过 background-attachment 属性防止这种滚动。
+        通过这个属性，可以声明图像相对于可视区是固定的（fixed），因此不会受到滚动的影响：
+    */
+    /*background-attachment: fixed;*/
+
+    /*
+        所有背景都在一个声明
+    */
+    background:red url("Jellyfish.jpg") no-repeat fixed center;
+}

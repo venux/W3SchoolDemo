@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Email例子</title>
+    <meta charset="utf-8" />
+    <script>
+        function validateForm(thisform) {
+            /*
+                为语句建立默认对象,with 语句通常用来减少特定情形下必须写入的代码数量。
+                警告:在严格模式中不允许使用 with。 使用 with 会导致代码更难读取和调试，因此通常应当避免
+            */
+            with (thisform) {
+                if (validate(email, "Email不允许为空！") == false) {
+                    email.focus();
+                    return false;
+                }
+            }
+        }
+
+        function validate(field, msg) {
+            with (field) {
+                if (value == null || value == "") {
+                    alert(msg);
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="04 Email验证成功页面.html" onsubmit="">
+        Email:<input type="email" size="30" />
+        <input type="submit" name="email" value="提交" />
+    </form>
+</body>
+</html>

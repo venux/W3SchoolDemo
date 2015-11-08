@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>数组例子</title>
+    <meta charset="utf-8" />
+    <script>
+        var arr = new Array();
+        arr[0] = "China";
+        arr[1] = "Japan";
+        arr[2] = "America";
+        arr[3] = "England";
+        output(arr);
+
+        var arr2 = new Array();
+        arr2[0] = "Russia";
+        arr2[1] = 1;
+        arr2[2] = true;
+        arr2[3] = undefined;
+
+        var arr3 = arr.concat(arr2);
+        output(arr3);
+
+        var arrStr = arr.join("和");
+        document.write("合并后字符串：" + arrStr);
+        document.write("<br/>");
+
+        //自动忽略了undefined
+        document.write("排序后字符串：" + arr3.sort());
+
+        function output(array) {
+            for (var v in array) {
+                document.write(array[v] + " ");
+            }
+            document.write("<br/>");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

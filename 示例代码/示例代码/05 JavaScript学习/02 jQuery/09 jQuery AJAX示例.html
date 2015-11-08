@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuery - AJAX 简介</title>
+    <meta charset="utf-8" />
+    <script src="jquery-2.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#loadTest").click(function () {
+                $("#loadTestResult").load("data.txt");
+            });
+
+            $("#loadSelectTest").click(function () {
+                //只加载data.txt，id为test的标签
+                $("#loadTestResult").load("data.txt #test");
+            });
+
+            $("#loadCallbackTest").click(function () {
+                //只加载data.txt，id为test的标签
+                $("#loadTestResult").load("data.txt", function (responseTxt, statusTxt, xmlhttprequest) {
+                    /*
+                        responseTxt - 包含调用成功时的结果内容
+                        statusTXT - 包含调用的状态
+                        xhr - 包含 XMLHttpRequest 对象
+                    */
+                    if (statusTxt == "success")
+                        alert("外部内容加载成功！");
+                    else if (statusTxt == "error")
+                        alert("发生错误：" + xmlhttprequest.status + "：" + xmlhttprequest.statusText);
+                });
+            });
+
+            $("#getTest").click(function () {
+                $.get("GetTest.asp", function (data, status) {
+                    alert("Data:" + data + "\nStatus:" + status);
+                });
+            });
+
+            $("#postTest").click(function () {
+                $.post("PostTest.asp",
+                    {
+                        name: "Donald Duck",
+                        city: "Duckburg"
+                    },
+                    function (data, status) {
+                        alert("Data:" + data + "\nStatus:" + status);
+                    });
+            });
+
+
+            $("#ajaxTest").click(function () {
+                var ajaxTest = $.ajax({
+                    url: "data.txt",
+                    async: false
+                });
+
+                $("#loadTestResult").html(ajaxTest.responseText);
+            });          
+        });
+    </script>
+</head>
+<body>
+    <h1>load()函数直接加载</h1>
+    <p>
+        jQuery load()方法是简单但强大的 AJAX 方法,从服务器加载数据，并把返回的数据放入被选元素中。<br />
+        <b>语法：</b>
+        $(selector).load(URL,data,callback);<br />
+        必需的 URL 参数规定您希望加载的 URL。<br />
+        可选的 data 参数规定与请求一同发送的查询字符串键/值对集合。<br />
+        可选的 callback 参数是 load() 方法完成后所执行的函数名称。 <br />
+    </p>
+    <input id="loadTest" type="button" value="load()加载" />
+    <input id="loadSelectTest" type="button" value="load()选择性加载" />
+    <input id="loadCallbackTest" type="button" value="load()回调" />
+    <input id="getTest" type="button" value="get()测试" />
+    <input id="postTest" type="button" value="post()测试" />
+    <input id="ajaxTest" type="button" value="ajax()测试" />
+    <p id="loadTestResult">
+    </p>
+</body>
+</html>

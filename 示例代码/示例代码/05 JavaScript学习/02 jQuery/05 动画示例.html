@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>动画示例</title>
+    <meta charset="utf-8" />
+    <style>
+        div {
+            border: 5px solid black;
+            margin: 10px;
+            background-color: red;
+            width: 400px;
+            height: 300px;
+            text-align: center;
+        }
+    </style>
+
+    <script src="jquery-2.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //$(selector).animate({params},speed,callback);
+            $("div").click(function () {
+
+                //动画队列
+                $("div").animate({
+                    width: '800px',
+                    //可定义相对值（该值相对于元素的当前值）。需要在值的前面加上 += 或 -=。
+                    height: '+=300px',
+                    //可以把属性的动画值设置为 "show"、"hide" 或 "toggle"。
+                    //width: 'toggle',
+                    //色彩动画并不包含在核心 jQuery 库中。如需生成颜色动画，需从 jQuery.com 下载 Color Animations 插件。
+                    backgroundColor: 'black'
+                }, 3000);
+
+                $("div").animate({
+                    width: '80px',
+                    //可定义相对值（该值相对于元素的当前值）。需要在值的前面加上 += 或 -=。
+                    height: '60px',
+                    //可以把属性的动画值设置为 "show"、"hide" 或 "toggle"。
+                    //width: 'toggle',
+                    //色彩动画并不包含在核心 jQuery 库中。如需生成颜色动画，需从 jQuery.com 下载 Color Animations 插件。
+                    backgroundColor: 'black'
+                }, 1000);
+
+                /*
+                    通过 jQuery，您可以把动作/方法链接起来。
+                    Chaining 允许我们在一条语句中允许多个 jQuery 方法（在相同的元素上）,链接（chaining）技术，允许我们在相同的元素上运行多条 jQuery 命令，一条接着另一条。
+                    这样的话，浏览器就不必多次查找相同的元素。如需链接一个动作，您只需简单地把该动作追加到之前的动作上。
+                */
+                $("div").animate({
+                    opacity: '0'
+                }, 'slower').animate({
+                    opacity: '1'
+                }, 10000);
+
+                $("div").animate({
+                    width: '400px',
+                    height: '300px',
+                    fontSize: '3em'
+                }, 3000, function () {
+                    /*
+                        由于 JavaScript 语句（指令）是逐一执行的 - 按照次序，动画之后的语句可能会产生错误或页面冲突，因为动画还没有完成。
+                        为了避免这个情况，您可以以参数的形式添加 Callback 函数。
+                        结论：如果您希望在一个涉及动画的函数之后来执行语句，请使用 callback 函数。
+                    */
+                    alert("队列动画完成！");
+                });
+            });
+
+            $("#btn1").click(function () {
+
+                /*
+                    jQuery stop() 方法用于停止动画或效果，在它们完成之前。
+                    stop() 方法适用于所有 jQuery 效果函数，包括滑动、淡入淡出和自定义动画。
+                */
+                $("div").stop();
+            });
+
+            $("#btn2").click(function () {
+
+                /*
+                    jQuery stop() 方法用于停止动画或效果，在它们完成之前。
+                    stop() 方法适用于所有 jQuery 效果函数，包括滑动、淡入淡出和自定义动画。
+                */
+                $("div").stop(true);
+            });
+
+            $("#btn3").click(function () {
+
+                /*
+                    jQuery stop() 方法用于停止动画或效果，在它们完成之前。
+                    stop() 方法适用于所有 jQuery 效果函数，包括滑动、淡入淡出和自定义动画。
+                */
+                $("div").stop(true, true);
+            });
+        });
+    </script>
+</head>
+<body>
+    <input id="btn1" type="button" value="'停止'按钮会停止当前活动的动画，但允许已排队的动画向前执行。" />
+    &nbsp;
+    <input id="btn2" type="button" value="'停止所有'按钮停止当前活动的动画，并清空动画队列；因此元素上的所有动画都会停止。" />
+    &nbsp;
+    <input id="btn3" type="button" value="'停止但要完成'会立即完成当前活动的动画，然后停下来。" />
+
+    <hr />
+    <div>
+        <p>动画效果示例</p>
+    </div>
+
+
+</body>
+</html>

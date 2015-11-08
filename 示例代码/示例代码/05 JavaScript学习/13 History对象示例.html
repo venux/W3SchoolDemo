@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>History对象示例</title>
+    <meta charset="utf-8" />
+
+    <script>
+        function goback() {
+            window.history.back();
+        }
+
+        function goforward() {
+            window.history.forward();
+        }
+    </script>
+</head>
+<body>
+    <h1>Window History对象</h1>
+    <p>
+        window.history 对象包含浏览器的历史。
+        <br />
+        为了保护用户隐私，对 JavaScript 访问该对象的方法做出了限制。
+    </p>
+    <hr />
+    <input type="button" value="后退" onclick="goback()" />
+    <input type="button" value="前进" onclick="goforward()" />
+</body>
+</html>

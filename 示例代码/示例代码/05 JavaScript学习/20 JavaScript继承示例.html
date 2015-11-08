@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JavaScript继承示例</title>
+    <meta charset="utf-8" />
+    <script>
+        function ClassA(sColor) {
+            this.color = sColor;
+        }
+
+        ClassA.prototype.sayColor = function () {
+            //return this.color;
+            alert(this.color);
+        };
+
+        function ClassB(sColor, sName) {
+            ClassA.call(this, sColor);
+            this.name = sName;
+        }
+
+        ClassB.prototype =new ClassA();
+
+        ClassB.prototype.sayName = function () {
+            //return this.name;
+            alert(this.name);
+        };
+
+        function test() {
+            var objA = new ClassA("blue");
+            var objB = new ClassB("red", "John");
+            objA.sayColor();	//输出 "blue"
+            objB.sayColor();	//输出 "red"
+            objB.sayName();	//输出 "John"
+        }
+    </script>
+</head>
+<body>
+    <a href="http://www.w3school.com.cn/js/pro_js_inheritance_implementing.asp">继承机制实现示例</a>
+    <hr />
+    <input type="button" value="对象冒充和原型链混合方式继承" onclick="test()" />
+
+</body>
+</html>

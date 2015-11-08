@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>3D 转换</title>
+    <meta charset="utf-8" />
+    <style>
+        div {
+            border: 1px solid red;
+            width: 400px;
+            height: 300px;
+            text-align: center;
+        }
+
+        #div1 {
+            transform: rotateX(180deg);
+        }
+
+        #div2 {
+            transform: rotateY(180deg);
+        }
+
+        #div3 {
+            transform: rotateZ(45deg);
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.w3school.com.cn/css3/css3_2dtransform.asp">CSS3 2D转换</a>
+
+    <div>
+        <p>正常</p>
+    </div>
+
+    <div id="div1">
+        <p>3D 转换:rotateX() 方法</p>
+        <p>通过 rotateX() 方法，元素围绕其 X 轴以给定的度数进行旋转。<br />可以看出高度变小了</p>
+    </div>
+    <br />
+    <div id="div2">
+        <p>3D 转换:rotateY() 方法</p>
+        <p>通过 rotateY() 方法，元素围绕其 Y 轴以给定的度数进行旋转。</p>
+    </div>
+    <br />
+    <div id="div3">
+        <p>3D 转换:rotateZ() 方法</p>
+        <p>通过 rotateZ() 方法，元素围绕其 Z 轴以给定的度数进行旋转。</p>
+    </div>
+    <br />
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>变量示例</title>
+    <meta charset="utf-8" />
+    <script>
+        function testVarDefaultValue() {
+            var v;
+            alert(v);
+        }
+        function testReInitVar() {
+            var v = "如果重新声明 JavaScript 变量，该变量的值不会丢失：\
+在以下两条语句执行后，变量 carname 的值依然是Volvo！";
+
+            var v;
+            alert(v);
+        }
+
+
+        function testInitArr() {
+            var arr = new Array();
+            arr[0] = "China";
+            arr[1] = false;
+            arr[2] = 27;
+
+            //var arr = new Array("China", false, 27);
+            //var arr = ["China", false, 27];
+
+            alert(arr.toString() + ":" + arr.length);
+        }
+
+        function testInitObj() {
+            var obj = {
+                name: "venux",
+                age: 26,
+                sex: "male",
+                job: null
+            };
+
+            var result = "姓名：" + obj.name + "\n" + "年龄：" + obj["age"] + "\n" + "性别：" + obj.sex + "\n" + "职业：" + obj.job;
+
+            alert(result.toString());
+        }
+
+        function testFunctionWithArgs(name) {
+
+            alert("你好，" + name + "!");
+        }
+
+        function testForInLoop() {
+            var obj = {
+                name: "venux",
+                age: 26,
+                sex: "male",
+                job: null
+            };
+
+            var result="";
+            for (var v in obj) {
+                result += obj[v] + "\n";
+            }
+            alert(result);
+        }
+
+        function testTryCatch() {
+            try{
+                var v = doc1ument.getElementById("notexist");
+                alert(v.toString());
+                throw "抛出异常";
+            }
+            catch (err) {
+                alert(err.message);
+            }
+            finally {
+                alert("finally");
+            }
+        }
+    </script>
+</head>
+<body>
+    <!--变量默认值-->
+    <input id="btnVarDefaultValue" type="button" value="变量默认值" onclick="testVarDefaultValue();" />
+    <hr />
+    <!--重新声明变量-->
+    <input id="btnReInitVar" type="button" value="重新声明变量" onclick="testReInitVar();" />
+    <hr />
+    <!--数组-->
+    <input id="btnInitArr" type="button" value="数组" onclick="testInitArr();" /><hr />
+    <hr />
+    <!--对象-->
+    <input id="btnInitObj" type="button" value="对象" onclick="testInitObj();" />
+    <hr />
+    <!--带参数的函数-->
+    <input id="btnFunctionWithArgs" type="button" value="带参数的函数" onclick="testFunctionWithArgs('venux');" />
+    <hr />
+    <!--for/in循环-->
+    <input id="btnForInLoop" type="button" value="for/in循环示例" onclick="testForInLoop();" />
+    <hr />
+    <!--异常-->
+    <input id="btnTryCatch" type="button" value="异常示例" onclick="testTryCatch();" />
+</body>
+</html>

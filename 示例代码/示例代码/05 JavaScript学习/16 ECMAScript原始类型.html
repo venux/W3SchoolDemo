@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ECMAScript原始类型</title>
+    <meta charset="utf-8" />
+    <script>
+        //var nObj = null;
+        //var uOjb = undefined;
+        var arr = [null, undefined, true, 27, NaN, Infinity, "hello world", new Date(), function () { alert("函数") }];
+
+        var result = "";
+        for (var temp in arr) {
+            result += arr[temp] + ":" + (typeof arr[temp]) + "\n";
+        }
+
+        alert(result);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

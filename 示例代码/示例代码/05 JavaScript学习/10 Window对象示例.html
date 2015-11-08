@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Window对象--浏览器窗口</title>
+    <meta charset="utf-8" />
+    <script>
+        function showInfoOfWindow() {
+            var result = "";
+            result += "浏览器窗口的尺寸（浏览器的视口，不包括工具栏和滚动条）大小为：\n(";
+
+            //innerHeight和innerWidth不适用与所有浏览器，如IE8
+            //result += window.innerWidth + "," + window.innerHeight;
+
+            //使用所有浏览器的方法
+            result += window.innerWidth || window.document.documentElement.clientWidth || window.document.body.clientWidth;
+            result += ",";
+            result += window.innerHeight || window.document.documentElement.clientHeight || window.document.body.clientHeight;
+            result += ")\n";
+
+            alert(result);
+        }
+
+        function openWindow() {
+            window.open("http://w3school.com.cn", "_blank");
+        }
+
+        function closeWindow() {
+            window.close();
+        }
+
+        function moveWindow() {
+            //前提是窗口不是全屏
+            window.moveTo(400, 300);
+        }
+
+        function resizeWindow() {
+            window.resizeTo(400, 300);
+        }
+    </script>
+
+</head>
+<body>
+    <h1>Window 对象</h1>
+    <p>
+        所有浏览器都支持 window 对象。它表示浏览器窗口。
+        所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。
+        全局变量是 window 对象的属性。
+        全局函数是 window 对象的方法。
+        甚至 HTML DOM 的 document 也是 window 对象的属性之一。
+    </p>
+    <input type="button" value="浏览器的宽高" onclick="showInfoOfWindow()" />
+    <input type="button" value="打开新窗口" onclick="openWindow()" />
+    <input type="button" value="关闭当前窗口" onclick="closeWindow()" />
+    <input type="button" value="移动当前窗口" onclick="moveWindow()" />
+    <input type="button" value="调整当前窗口大小" onclick="resizeWindow()" />
+</body>
+</html>

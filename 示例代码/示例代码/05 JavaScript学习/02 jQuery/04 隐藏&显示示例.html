@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>隐藏&显示示例</title>
+    <meta charset="utf-8" />
+    <style>
+        div {
+            /*border: 1px solid red;*/
+        }
+    </style>
+    <script src="jquery-2.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".div").css("border", "2px solid red").css("width", "400px").css("height", "300px");
+            $("h1").css("text-align", "center").css("margin-bottom", "10px");
+            $("input[type='button']").css("margin-left", "5px");
+            $(".infodiv").css("border", "1px solid black").css("margin", "10px 5px").css("height", "190px").css("background-color", "gray");
+            $(".infodiv p").css("margin", "5px 5px");
+
+            //显示隐藏按钮点击切换状态
+            $("#btnChina").click(function () {
+                if (this.value == "隐藏信息") {
+                    //$("#infoChina").hide("slow");
+                    $("#infoChina").fadeOut(3000);
+                    this.value = "显示信息";
+                    $(this).parent(".div").css("height", "110px");
+                }
+                else {
+                    //$("#infoChina").show("slow");
+                    $("#infoChina").fadeIn(3000);
+                    this.value = "隐藏信息";
+                    $(this).parent(".div").css("height", "300px");
+                }
+
+                //使用 toggle() 方法来切换 hide() 和 show() 方法。显示被隐藏的元素，并隐藏已显示的元素。
+                //$("#infoChina").toggle("slow");
+            });
+
+        });
+
+    </script>
+</head>
+<body>
+    <div class="div">
+        <h1>中国</h1>
+        <input id="btnChina" type="button" value="隐藏信息" />
+        <div id="infoChina" class="infodiv">
+            <p id="pChina">
+                中国，China!
+            </p>
+        </div>
+    </div>
+    <br />
+    <!--<div class="div">
+        <h1>美国</h1>
+        <input id="btnAmerica" type="button" value="隐藏信息" />
+        <div id="infoAmerica" class="infodiv">
+            <p id="pAmerica">
+                美国，America!
+            </p>
+        </div>
+    </div>-->
+</body>
+</html>

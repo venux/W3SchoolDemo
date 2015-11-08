@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>查找元素示例</title>
+    <meta charset="utf-8" />
+    <script>
+        document.write(new Date());
+
+        function getElementByID() {
+            var idElement = document.getElementById("id");
+            idElement.innerHTML += "--ID查找成功！";
+        }
+
+        function getElementByTag() {
+            var tagElements = document.getElementsByTagName("p");
+
+            for (var index = 0, length = tagElements.length; index < length; index++) {
+                var element = tagElements[index];
+                element.innerHTML += "--标签查找成功!";
+            }
+        }
+        function getElementByClass() {
+            var classElements = document.getElementsByClassName("class");
+
+            for (var index = 0, length = classElements.length; index < length; index++) {
+                var element = classElements[index];
+                element.innerHTML += "--类名查找成功!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <p id="id">
+            通过ID查找
+        </p>
+        <p>
+            通过标签名查找
+        </p>
+        <p class="class">
+            通过类名查找1
+        </p>
+        <p class="class">
+            通过类名查找2
+        </p>
+
+        <input type="button" value="ID查找" onclick="getElementByID();" />
+        &nbsp;
+        <input type="button" value="标签名查找" onclick="getElementByTag();" />
+        &nbsp;
+        <input type="button" value="类名查找" onclick="getElementByClass();" />
+        &nbsp;
+    </div>
+</body>
+</html>

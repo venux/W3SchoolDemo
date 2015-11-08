@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<!--事件处理示例-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="JS/debug.js"></script>
+    <script src="JS/hide.js"></script>
+    <script src="JS/Test_in.js"></script>
+    <script src="JS/Test_Logic.js"></script>
+    <script src="JS/Test_trycatchfinally.js"></script>
+    <script src="JS/Test_debugger.js"></script>
+    <script src="JS/Test_usestrict.js"></script>
+</head>
+<body>
+    Hello
+    <button onclick="hide(this,true);debug('隐藏元素e，其所占的空间也消失')" ;>隐藏元素e，其所占的空间也消失</button>
+    <button onclick="hide(this,true);debug('隐藏元素e，但保留所占空间')" ;>隐藏元素e，但保留所占空间</button>
+    World
+
+    <button onclick="intest();" ;>JavaScript in操作符测试</button>
+    <button onclick="logicTest();" ;>JavaScript 逻辑表达式测试</button>
+    <button onclick="trycatchfinallyTest();" ;>try-catch-finally测试</button>
+    <button onclick="debuggerTest();";>debugger语句测试</button>
+    <button onclick="usestrictTest();";>严格模式测试</button>
+</body>
+</html>

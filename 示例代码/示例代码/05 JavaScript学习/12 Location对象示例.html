@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Window Location对象示例</title>
+    <meta charset="utf-8" />
+    <script>
+        function getInfoOfLocation() {
+            var result = "当前页面地址的信息\n";
+            result += "当前页面Web主机的域名hostname：" + window.location.hostname + "\n";
+            result += "当前页面的路径和文件名pathname：" + window.location.pathname + "\n";
+            result += "当前页面Web主机的端口port：" + window.location.port + "\n";
+            result += "当前页面的Web协议protocol：" + window.location.protocol + "\n";
+            result += "当前页面的Web主机host：" + window.location.host + "\n";
+            result += "当前页面的链接地址href：" + window.location.href + "\n";
+            result += "当前页面的search：" + window.location.search + "\n";
+
+            alert(result);
+        }
+
+        function gotoNewPage() {
+            window.location.assign("http://www.w3school.com.cn");
+        }
+    </script>
+</head>
+<body>
+    <h1>Window Location对象</h1>
+    <p>window.location 对象用于获得当前页面的地址 (URL)，并把浏览器重定向到新的页面。</p>
+    <input type="button" value="当前页面地址的信息" onclick="getInfoOfLocation()" />
+    <input type="button" value="重定向新页面" onclick="gotoNewPage()" />
+</body>
+</html>

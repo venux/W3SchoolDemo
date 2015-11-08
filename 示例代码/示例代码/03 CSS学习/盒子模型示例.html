@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>盒子模型示例</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        #margin {
+            background-color: burlywood;
+            border: 1px black dashed;
+            margin:100px 100px;
+        }
+
+        #border {
+            background-color: yellow;
+            border: 1px black solid;            
+        }
+
+        #padding {
+            background-color: green;
+            border: 1px black dashed;
+            padding:100px 100px
+        }
+
+        #content {
+            background-color: blue;
+            border: 1px black solid;
+            width:800px;
+            height:600px;            
+        }
+
+        #test{
+            border-style:dashed dotted double groove;
+            border-width:10px;
+            border-color:blue;
+            background-color:red;
+            width:400px;
+            height:300px;
+            padding:100px;
+        }
+        #test p{
+            border:solid 5px;
+            /*透明边框*/
+            border-color:transparent;
+            background-color:yellow;
+            padding:10%;
+            position:center;
+        }
+
+        #test p:hover{
+            border-color:darkgoldenrod;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="margin">
+        <div id="border">
+            <div id="padding">
+                <div id="content">
+                    <p>content</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="test">
+        <p><span>测试</span></p>
+    </div>
+</body>
+</html>

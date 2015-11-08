@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ECMAScript</title>
+    <meta charset="utf-8" />
+    <style>
+        h1 {
+            text-align: center;
+            color: red;
+        }
+
+        li p {
+            font-style: italic;
+        }
+    </style>
+    <script>
+        function deleteTest() {
+            var obj = new Object();
+            obj.name = "venux";
+            obj.age = 27;
+
+            print(obj);
+
+            delete obj.name;//删除obj的name属性
+
+            print(obj);
+        }
+
+
+        //输出
+        function print(obj) {
+            var result = "";
+
+            for (var v in obj) {
+                result += v + ":" + obj[v] + "\n";
+            }
+
+            alert(result);
+        }
+
+        function notTest() {
+            var num = 10;
+            var result = !num;
+
+            alert(result);
+        }
+
+        function andTest() {
+
+            var result = "";
+            var num1 = 10;
+            var num2 = 27;
+
+            result += "10&&27:" + (num1 && num2) + "\n";
+
+            var num3 = 10;
+            var num4 = 0;
+
+            result += "10&&0:" + (num3 && num4) + "\n";
+
+            var num5 = 0;
+            var num6 = 27;
+
+            result += "0&&27:" + (num5 && num6) + "\n";
+
+            alert(result);
+        }
+
+        function orTest() {
+
+            var result = "";
+            var num1 = 10;
+            var num2 = 27;
+
+            result += "10||27:" + (num1 || num2) + "\n";
+
+            var num3 = 10;
+            var num4 = 0;
+
+            result += "10||0:" + (num3 || num4) + "\n";
+
+            var num5 = 0;
+            var num6 = 27;
+
+            result += "0||27:" + (num5 || num6) + "\n";
+
+            alert(result);
+        }
+    </script>
+</head>
+<body>
+    <h1>一元运算符</h1>
+    <ul>
+        <li>
+            <p>delete</p>
+            <span>
+                delete 运算符删除对以前定义的对象属性或方法的引用。
+                delete 运算符不能删除开发者未定义的属性和方法,否则将引发错误。
+            </span>
+            <br />
+            <input type="button" value="delete运算符示例" onclick="deleteTest()" />
+        </li>
+
+        <li>
+            <p>void</p>
+            <span>
+                void 运算符对任何值返回 undefined。
+                该运算符通常用于避免输出不应该输出的值，例如，从 HTML 的a 元素调用 JavaScript 函数时。要正确做到这一点，函数不能返回有效值，否则浏览器将清空页面，只显示函数的结果。
+                <b>提示：</b>请记住，没有返回值的函数真正返回的都是 undefined。
+            </span>
+            <br />
+            <a href="javascript:window.open('about:blank')">未使用void，点击后原页面显示[object]</a>
+            <br />
+            <a href="javascript:void(window.open('about:blank'))">使用void，点击后原页面不变</a>;
+        </li>
+    </ul>
+    <hr />
+
+    <h1>逻辑运算符</h1>
+
+    <ul>
+        <li>
+            <p>NOT</p>
+            <input type="button" value="逻辑运算符NOT示例" onclick="notTest()" />
+        </li>
+
+        <li>
+            <p>AND</p>
+            <input type="button" value="逻辑运算符AND示例" onclick="andTest()" />
+        </li>
+
+
+        <li>
+            <p>OR</p>
+            <input type="button" value="逻辑运算符OR示例" onclick="orTest()" />
+        </li>
+    </ul>
+    <hr />
+</body>
+</html>

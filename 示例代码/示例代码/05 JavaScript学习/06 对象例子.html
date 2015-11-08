@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>对象示例</title>
+    <meta charset="utf-8" />
+    <script>
+        /*定义对象的几种方法*/
+
+        //第一种
+        var person1 = new Object();
+        person1.firstname = "Bill";
+        person1.lastname = "Gates";
+        person1.age = 56;
+        person1.eyecolor = "blue";
+        document.write(person1.firstname + " is " + person1.age + " years old.");
+        document.write("<br/>");
+        //第二种
+        var person2 = {
+            firstname: "John",
+            lastname: "Doe",
+            age: 50,
+            eyecolor: "blue"
+        };
+        //document.write(person2.firstname + " is " + person2.age + " years old.");
+        var result = "";
+        for (var v in person2) {
+            result += person2[v]+" ";
+        }
+
+        document.write(result);
+
+        document.write("<br/>");
+        function person(firstname, lastname, age, eyecolor) {
+            this.firstname = firstname;
+            this.lastname = lastname;
+            this.age = age;
+            this.eyecolor = eyecolor;
+            this.ChangeName = ChangeName;
+
+            //将方法添加到对象中
+            function ChangeName(name) {
+                this.lastname = name;
+            }
+        }
+
+        //第三种
+        var person3 = new person("John", "Doe", 50, "blue");
+        person3.ChangeName("venux");
+
+        document.write(person3.lastname + " is " + person3.age + " years old.");
+        document.write("<br/>");
+    </script>
+</head>
+<body>
+
+</body>
+</html>

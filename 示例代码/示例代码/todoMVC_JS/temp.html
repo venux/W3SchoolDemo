@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <style>
+        body {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .todo {
+            margin: 1em auto;
+            display: block;
+            padding: .5em 1em;
+            min-width: 90%;
+        }
+
+        .list {
+            text-align: center;
+            list-style-type: none;
+            -webkit-padding-start: 0;
+        }
+
+            .list > li {
+                max-width: 100%;
+                margin: .5em auto auto;
+                text-align: left;
+                display: block;
+            }
+
+            .list input {
+                display: inline-block;
+                opacity: 1;
+                vertical-align: text-top;
+            }
+
+                .list input:after {
+                    content;
+                    ' ';
+                    width: 1.5em;
+                    height: 1.5em;
+                    background: none;
+                    border: 1px solid lightgray;
+                    border-radius: 50%;
+                    display: inline-block;
+                    opacity: 1;
+                }
+
+                .list input:checked {
+                    content;
+                    ' ';
+                    color: white;
+                    background: darkblue;
+                }
+
+                    .list input:checked + span {
+                        text-decoration: line-through;
+                        color: gray;
+                    }
+
+            .list > li > right {
+                float: right;
+                display: inline-block;
+                color: orangered;
+                transform: scaleX(1.5);
+                font-family: cursive;
+                cursor: pointer;
+                opacity: .1;
+            }
+
+            .list > li:hover > right {
+                opacity: 1;
+            }
+    </style>
+
+    <input class="todo" type='text' placeholder="请输入todo事项，回车键保存" />
+    <ol id="list" class="list">
+        <!--
+          <li class="">
+            <label class="">
+              <input class="" type="checkbox" />
+              <span>Bello</span>
+            </label>
+            <right>X</right>
+          </li>
+        -->
+    </ol>
+
+    <script>
+        var _todo = document.getElementsByTagName('input')[0]
+        _todo.addEventListener('keyup', function (e) {
+            if (e.which == 13) {
+                postTodo(this.value)
+                //clear input value
+                this.value = ''
+            }
+        })
+        function postTodo() {
+            if (arguments[0].trim()) {
+                console.info(arguments[0])
+                var _todo = { content: arguments[0], checked: false }
+                pushLsit(_todo)
+            }
+        }
+        function pushLsit(obj) {
+            var _list = document.getElementById('list')
+            console.log('push')
+            document.getElementById('list').appendChild(createItem(obj))
+        }
+        function createItem(obj) {
+            //create input
+            var _input = document.createElement('input')
+            _input.setAttribute('type', 'checkbox')
+            //create span
+            var _span = document.createElement('span')
+            _span.innerHTML = obj.content
+            //create label
+            var _label = document.createElement('label')
+            _label.appendChild(_input)
+            _label.appendChild(_span)
+            //create right
+            var _right = document.createElement('right')
+            _right.innerHTML = 'X'
+            //create li
+            var _li = document.createElement('li')
+            _li.appendChild(_label)
+            _li.appendChild(_right)
+            //delete event binding
+            _right.addEventListener('click', function () {
+                _li.parentNode.removeChild(_li)
+            })
+            return _li
+        }
+    </script>
+</body>
+</html>

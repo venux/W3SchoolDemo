@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>各类选择器使用</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        .div1, .div2, .div3 {
+            border: solid 1px red;
+        }
+            /*
+                后代选择器（ ）
+                后代选择器可以选择作为某元素后代的元素。
+                有关后代选择器有一个易被忽视的方面，即两个元素之间的层次间隔可以是无限的。
+             */
+            .div1 h1 em {
+                color: red;
+            }
+
+            /*
+                 子元素选择器（>）
+                 与后代选择器相比，子元素选择器（Child selectors）只能选择作为某元素子元素的元素。
+             */
+            .div2 h1 > em {
+                color: red;
+            }
+
+            /*
+                 相邻兄弟元素选择器（+）
+                 相邻兄弟选择器（Adjacent sibling selector）可选择紧接在另一元素后的元素，且二者有相同父元素。
+                 请记住，用一个结合符只能选择两个相邻兄弟中的第二个元素。
+             */
+            .div3 h1 + p {
+                color: red;
+            }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <h1>
+            This is a
+            <em>
+                important
+            </em>
+            heading.
+        </h1>
+
+        <h1>
+            <span>
+                This is a
+                <em>
+                    important
+                </em>
+                paragraph.
+            </span>
+        </h1>
+
+        <p>
+            This is a
+            <em>
+                important
+            </em>
+            paragraph.
+        </p>
+    </div>
+    <br />
+    <div class="div2">
+        <h1>
+            This is a
+            <em>
+                important
+            </em>
+            heading.
+        </h1>
+
+        <h1>
+            <span>
+                This is a
+                <em>
+                    important
+                </em>
+                paragraph.
+            </span>
+        </h1>
+
+        <p>
+            This is a
+            <em>
+                important
+            </em>
+            paragraph.
+        </p>
+    </div>
+    <div class="div3">
+        <h1>
+            This is a
+            <em>
+                important
+            </em>
+            heading.
+        </h1>
+
+        <h1>
+            <span>
+                This is a
+                <em>
+                    important
+                </em>
+                paragraph.
+            </span>
+        </h1>
+
+        <p>
+            This is a
+            <em>
+                important
+            </em>
+            paragraph.
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>动画效果示例</title>
+    <meta charset="utf-8" />
+    <style>
+        /*定义动画效果*/
+        @keyframes myAnimation {
+            from {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            to {
+                background-color: yellow;
+                right: 0px;
+                bottom: 0px;
+            }
+        }
+
+        /*
+            百分比选择器
+            from-0%
+            to-100%
+        */
+        @keyframes myAnimation2 {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+
+            25% {
+                background-color: yellow;
+                left: 500px;
+                top: 0px;
+            }
+
+            50% {
+                background-color: blue;
+                left: 500px;
+                top: 500px;
+            }
+
+            75% {
+                background-color: white;
+                left: 0px;
+                top: 500px;
+            }
+
+            100% {
+                background-color: black;
+                left: 0px;
+                top: 0px;
+            }
+        }
+
+        div {
+            position: fixed;
+            border: 1px red solid;
+            width: 400px;
+            height: 300px;
+            /*动画*/
+            animation: myAnimation2 10s;
+            /*动画播放次数，无限多次*/
+            animation-iteration-count: infinite;
+
+            /*动画下一周期播放方向*/
+            animation-direction:alternate-reverse;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

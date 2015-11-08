@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{742A0094-FF47-47B9-810F-8DE5F9CC7CD7}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>示例代码</RootNamespace>
+    <AssemblyName>示例代码</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="04 CSS3学习\3D转换示例.html" />
+    <Content Include="04 CSS3学习\2D转换示例.html" />
+    <Content Include="04 CSS3学习\动画效果示例.html" />
+    <Content Include="04 CSS3学习\多列示例.html" />
+    <Content Include="04 CSS3学习\字体示例.html" />
+    <Content Include="04 CSS3学习\文字效果.html" />
+    <Content Include="04 CSS3学习\新的用户界面属性示例.html" />
+    <Content Include="04 CSS3学习\背景图片.jpg" />
+    <Content Include="04 CSS3学习\背景示例.html" />
+    <Content Include="04 CSS3学习\边框图片.png" />
+    <Content Include="04 CSS3学习\边框示例.html" />
+    <Content Include="04 CSS3学习\过渡效果示例.html" />
+    <Content Include="03 CSS学习\光标类型示例.html" />
+    <Content Include="03 CSS学习\各类选择器.html" />
+    <Content Include="03 CSS学习\图像排列.gif" />
+    <Content Include="03 CSS学习\CSS\style1.css" />
+    <Content Include="03 CSS学习\CSS\各类样式示例.css" />
+    <Content Include="03 CSS学习\index.html" />
+    <Content Include="03 CSS学习\Sample Pictures\Chrysanthemum.jpg" />
+    <Content Include="03 CSS学习\Sample Pictures\Desert.jpg" />
+    <Content Include="03 CSS学习\Sample Pictures\Hydrangeas.jpg" />
+    <Content Include="03 CSS学习\Sample Pictures\Jellyfish.jpg" />
+    <Content Include="03 CSS学习\Sample Pictures\Koala.jpg" />
+    <Content Include="03 CSS学习\Sample Pictures\Lighthouse.jpg" />
+    <Content Include="03 CSS学习\Sample Pictures\Penguins.jpg" />
+    <Content Include="03 CSS学习\Sample Pictures\Tulips.jpg" />
+    <Content Include="03 CSS学习\Sample Pictures\图像映射.png" />
+    <Content Include="03 CSS学习\Tulips.jpg" />
+    <Content Include="03 CSS学习\列表样式示例.html" />
+    <Content Include="03 CSS学习\图片库示例.html" />
+    <Content Include="03 CSS学习\外边距合并示例.html" />
+    <Content Include="03 CSS学习\多类选择器样式示例.html" />
+    <Content Include="03 CSS学习\媒介类型示例.html" />
+    <Content Include="03 CSS学习\定位样式示例.html" />
+    <Content Include="03 CSS学习\对齐示例.html" />
+    <Content Include="03 CSS学习\导航栏案例.html" />
+    <Content Include="03 CSS学习\文本样式示例.html" />
+    <Content Include="03 CSS学习\浮动样式示例.html" />
+    <Content Include="03 CSS学习\盒子模型示例.html" />
+    <Content Include="03 CSS学习\背景样式示例.html" />
+    <Content Include="03 CSS学习\表格样式示例.html" />
+    <Content Include="03 CSS学习\轮廓样式示例.html" />
+    <Content Include="03 CSS学习\链接样式示例.html" />
+    <Content Include="Demo\Canvas 正弦波动的圆盘（曲面）\html.html" />
+    <Content Include="Demo\Canvas 正弦波动的圆盘（曲面）\JavaScript.js" />
+    <Content Include="Demo\JS\Test_Array.js" />
+    <Content Include="Demo\JS\Test_CreateObject.js" />
+    <Content Include="Demo\JS\Test_debugger.js" />
+    <Content Include="Demo\JS\Test_in.js" />
+    <Content Include="Demo\JS\Test_Logic.js" />
+    <Content Include="Demo\JS\Test_trycatchfinally.js" />
+    <Content Include="Demo\JS\Test_usestrict.js" />
+    <Content Include="Demo\贷款计算器.html" />
+    <Content Include="02 HTML5学习\HTML 5 input 新类型.html" />
+    <Content Include="02 HTML5学习\HTML 5 Web Workers\script.js" />
+    <Content Include="02 HTML5学习\HTML 5 Web Workers\Web Worker示例.html" />
+    <Content Include="02 HTML5学习\Web存储示例.html" />
+    <Content Include="02 HTML5学习\应用程序缓存示例.html" />
+    <Content Include="02 HTML5学习\拖放示例.html" />
+    <Content Include="02 HTML5学习\画布例子.html" />
+    <Content Include="02 HTML5学习\视频音频示例.html" />
+    <Content Include="02 HTML5学习\资源\Koala.jpg" />
+    <Content Include="02 HTML5学习\资源\movie.mp4" />
+    <Content Include="02 HTML5学习\资源\mov_bbb.mp4" />
+    <Content Include="02 HTML5学习\资源\song.mp3" />
+    <Content Include="01 HTML学习\CSS\StyleSheet1.css" />
+    <Content Include="01 HTML学习\index.html" />
+    <Content Include="03 CSS学习\CSS\Jellyfish.jpg" />
+    <Content Include="01 HTML学习\Sample Pictures\Chrysanthemum.jpg" />
+    <Content Include="01 HTML学习\Sample Pictures\Desert.jpg" />
+    <Content Include="01 HTML学习\Sample Pictures\Hydrangeas.jpg" />
+    <Content Include="01 HTML学习\Sample Pictures\Jellyfish.jpg" />
+    <Content Include="01 HTML学习\Sample Pictures\Koala.jpg" />
+    <Content Include="01 HTML学习\Sample Pictures\Lighthouse.jpg" />
+    <Content Include="01 HTML学习\Sample Pictures\Penguins.jpg" />
+    <Content Include="01 HTML学习\Sample Pictures\Tulips.jpg" />
+    <Content Include="01 HTML学习\Sample Pictures\图像映射.png" />
+    <Content Include="01 HTML学习\test.html" />
+    <Content Include="01 HTML学习\框架例子\iframeTest.html" />
+    <Content Include="01 HTML学习\框架例子\内联框架.html" />
+    <Content Include="01 HTML学习\框架例子\框架例子.html" />
+    <Content Include="01 HTML学习\框架例子\框架例子_中部_全部.html" />
+    <Content Include="01 HTML学习\框架例子\框架例子_中部_左侧.html" />
+    <Content Include="01 HTML学习\框架例子\框架例子_头部.html" />
+    <Content Include="01 HTML学习\框架例子\框架例子_尾部.html" />
+    <Content Include="01 HTML学习\网页布局例子.html" />
+    <Content Include="01 HTML学习\表单例子.html" />
+    <Content Include="01 HTML学习\高级教程\index.html" />
+    <Content Include="01 HTML学习\高级教程\重定向网页.html" />
+    <Content Include="05 JavaScript学习\01 JS写HTMLR入输出示例.html" />
+    <Content Include="05 JavaScript学习\02 jQuery\01 测试jQuery框架库.html" />
+    <Content Include="05 JavaScript学习\02 jQuery\02 jQuery示例.html" />
+    <Content Include="05 JavaScript学习\02 jQuery\03 jQuery名称冲突示例.html" />
+    <Content Include="05 JavaScript学习\02 jQuery\04 隐藏&amp;显示示例.html" />
+    <Content Include="05 JavaScript学习\02 jQuery\05 动画示例.html" />
+    <Content Include="05 JavaScript学习\02 jQuery\06 元素增啥改查示例.html" />
+    <Content Include="05 JavaScript学习\02 jQuery\07 CSS示例.html" />
+    <Content Include="05 JavaScript学习\02 jQuery\08 遍历示例.html" />
+    <Content Include="05 JavaScript学习\02 jQuery\09 jQuery AJAX示例.html" />
+    <Content Include="05 JavaScript学习\02 jQuery\data.txt" />
+    <Content Include="05 JavaScript学习\02 jQuery\GetTest.asp" />
+    <Content Include="05 JavaScript学习\02 jQuery\jquery-2.1.1.min.js" />
+    <Content Include="05 JavaScript学习\02 jQuery\PostTest.asp" />
+    <Content Include="05 JavaScript学习\02 变量.html" />
+    <Content Include="05 JavaScript学习\03 Prototype\01 测试Prototype框架库.html" />
+    <Content Include="05 JavaScript学习\03 Prototype\prototype.js" />
+    <Content Include="05 JavaScript学习\03 表单验证.html" />
+    <Content Include="05 JavaScript学习\04 AJAX\01 AJAX示例.html" />
+    <Content Include="05 JavaScript学习\04 AJAX\02 AJAX高级示例 ASP.html" />
+    <Content Include="05 JavaScript学习\04 AJAX\03 AJAX 使用Callback函数.html" />
+    <Content Include="05 JavaScript学习\04 AJAX\04 AJAX高级示例 XML.html" />
+    <Content Include="05 JavaScript学习\04 AJAX\CDData.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="05 JavaScript学习\04 AJAX\data.txt" />
+    <Content Include="05 JavaScript学习\04 AJAX\信息网页.html" />
+    <Content Include="05 JavaScript学习\04 Email验证例子.html" />
+    <Content Include="05 JavaScript学习\04 Email验证成功页面.html" />
+    <Content Include="05 JavaScript学习\05 JSON\01 HTML JS JSON示例.html" />
+    <Content Include="05 JavaScript学习\05 JSON\02 eval函数解析JSON示例.html" />
+    <Content Include="05 JavaScript学习\05 JSON\03 JSON解析器示例.html" />
+    <Content Include="05 JavaScript学习\05 计时器例子.html" />
+    <Content Include="05 JavaScript学习\06 对象例子.html" />
+    <Content Include="05 JavaScript学习\07 字符串例子.html" />
+    <Content Include="05 JavaScript学习\09 正则表达式示例.html" />
+    <Content Include="05 JavaScript学习\10 Window对象示例.html" />
+    <Content Include="05 JavaScript学习\11 Screen对象示例.html" />
+    <Content Include="05 JavaScript学习\12 Location对象示例.html" />
+    <Content Include="05 JavaScript学习\13 History对象示例.html" />
+    <Content Include="05 JavaScript学习\14 Navigator对象示例.html" />
+    <Content Include="05 JavaScript学习\15 Cookies对象示例.html" />
+    <Content Include="05 JavaScript学习\01 DOM\01 查找元素.html" />
+    <Content Include="05 JavaScript学习\01 DOM\02 改变元素.html" />
+    <Content Include="05 JavaScript学习\01 DOM\03 事件.html" />
+    <Content Include="05 JavaScript学习\01 DOM\04 创建删除节点.html" />
+    <Content Include="05 JavaScript学习\16 ECMAScript原始类型.html" />
+    <Content Include="05 JavaScript学习\17 ECMAScript运算符.html" />
+    <Content Include="05 JavaScript学习\19 结合构造函数和原型创建对象示例（重要）.html" />
+    <Content Include="05 JavaScript学习\18 ECMAScript函数.html" />
+    <Content Include="05 JavaScript学习\20 JavaScript继承示例.html" />
+    <Content Include="05 JavaScript学习\img\Koala.jpg" />
+    <Content Include="05 JavaScript学习\img\关.png" />
+    <Content Include="05 JavaScript学习\img\开.png" />
+    <Content Include="05 JavaScript学习\08 数组例子.html" />
+    <Content Include="JavaScript类库\jquery-2.1.4.js" />
+    <Content Include="JavaScript类库\jquery-2.1.4.min.js" />
+    <Content Include="JavaScript类库\prototype.js" />
+    <Content Include="JavaScript类库\StringBuffer.js" />
+    <Content Include="packages.config" />
+    <Content Include="JavaScript权威指南\06.04.classof" />
+    <Content Include="JavaScript权威指南\20.05.permanote.appcache" />
+    <Content Include="todoMVC_JS\delete.png" />
+    <Content Include="todoMVC_JS\index.html" />
+    <Content Include="todoMVC_JS\temp.html" />
+    <Content Include="03 CSS学习\伪类样式示例.html" />
+    <Content Include="盒子模型\boxDemo1.html" />
+    <Content Include="盒子模型\boxDemo2.html" />
+    <Content Include="盒子模型\JS\jquery-2.1.1.min.js" />
+    <Content Include="02 HTML5学习\资源\movie.ogg" />
+    <Content Include="04 CSS3学习\Sansation_Light.eot" />
+    <Content Include="04 CSS3学习\Sansation_Light.ttf" />
+    <Content Include="05 JavaScript学习\04 AJAX\gethint.asp" />
+    <Content Include="05 JavaScript学习\05 JSON\data.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Demo\Demo1.html" />
+    <Content Include="Demo\JS\debug.js" />
+    <Content Include="Demo\JS\hide.js" />
+    <Content Include="JavaScript权威指南\01.01.loancalc.html" />
+    <Content Include="JavaScript权威指南\06.01.inherit.js" />
+    <Content Include="JavaScript权威指南\06.02.extend.js" />
+    <Content Include="JavaScript权威指南\06.03.extend2.js" />
+    <Content Include="JavaScript权威指南\08.01.defining_functions.js" />
+    <Content Include="JavaScript权威指南\08.02.functions_as_data.js" />
+    <Content Include="JavaScript权威指南\08.03.extend_patched.js" />
+    <Content Include="JavaScript权威指南\08.04.addPrivateProperty.js" />
+    <Content Include="JavaScript权威指南\08.05.bind2.js" />
+    <Content Include="JavaScript权威指南\09.01.range.js" />
+    <Content Include="JavaScript权威指南\09.02.range2.js" />
+    <Content Include="JavaScript权威指南\09.03.Complex.js" />
+    <Content Include="JavaScript权威指南\09.04.type.js" />
+    <Content Include="JavaScript权威指南\09.05.quacks.js" />
+    <Content Include="JavaScript权威指南\09.06.Set1.js" />
+    <Content Include="JavaScript权威指南\09.07.enumeration.js" />
+    <Content Include="JavaScript权威指南\09.08.Cards.js" />
+    <Content Include="JavaScript权威指南\09.09.genericmethods.js" />
+    <Content Include="JavaScript权威指南\09.10.range3.js" />
+    <Content Include="JavaScript权威指南\09.11.defineSubclass.js" />
+    <Content Include="JavaScript权威指南\09.12.SingletonSet.js" />
+    <Content Include="JavaScript权威指南\09.13.NonNullSet.js" />
+    <Content Include="JavaScript权威指南\09.14.filteredSetSubclass.js" />
+    <Content Include="JavaScript权威指南\09.15.FilteredSet.js" />
+    <Content Include="JavaScript权威指南\09.16.Sets.js" />
+    <Content Include="JavaScript权威指南\09.17.objectid.js" />
+    <Content Include="JavaScript权威指南\09.18.range4.js" />
+    <Content Include="JavaScript权威指南\09.19.freezeProps.js" />
+    <Content Include="JavaScript权威指南\09.20.range5.js" />
+    <Content Include="JavaScript权威指南\09.21.range6.js" />
+    <Content Include="JavaScript权威指南\09.22.StringSet.js" />
+    <Content Include="JavaScript权威指南\09.23.properties.js" />
+    <Content Include="JavaScript权威指南\09.24.Set2.js" />
+    <Content Include="JavaScript权威指南\11.01.linesgenerator.js" />
+    <Content Include="JavaScript权威指南\12.01.rhinoURLFetcher.js" />
+    <Content Include="JavaScript权威指南\12.02.nodeserver.js" />
+    <Content Include="JavaScript权威指南\12.03.httputils.js" />
+    <Content Include="JavaScript权威指南\13.01.reveal.html" />
+    <Content Include="JavaScript权威指南\13.02.digital_clock.html" />
+    <Content Include="JavaScript权威指南\13.03.from1996.html" />
+    <Content Include="JavaScript权威指南\13.04.loadasync.js" />
+    <Content Include="JavaScript权威指南\13.05.onLoad.js" />
+    <Content Include="JavaScript权威指南\14.01.invoke.js" />
+    <Content Include="JavaScript权威指南\14.02.urlArgs.js" />
+    <Content Include="JavaScript权威指南\14.03.uaparser.js" />
+    <Content Include="JavaScript权威指南\14.04.multiprompt.html" />
+    <Content Include="JavaScript权威指南\15.01.getElements.js" />
+    <Content Include="JavaScript权威指南\15.02.traversal.js" />
+    <Content Include="JavaScript权威指南\15.03.textContent2.js" />
+    <Content Include="JavaScript权威指南\15.04.sortrows.js" />
+    <Content Include="JavaScript权威指南\15.05.outerHTML.js" />
+    <Content Include="JavaScript权威指南\15.06.insert.js" />
+    <Content Include="JavaScript权威指南\15.07.TOC.js" />
+    <Content Include="JavaScript权威指南\15.08.getScrollOffsets.js" />
+    <Content Include="JavaScript权威指南\15.09.getViewportSize.js" />
+    <Content Include="JavaScript权威指南\15.10.ElementStream.js" />
+    <Content Include="JavaScript权威指南\16.01.cssexample.html" />
+    <Content Include="JavaScript权威指南\16.02.windows.html" />
+    <Content Include="JavaScript权威指南\16.03.animations.js" />
+    <Content Include="JavaScript权威指南\16.04.scale.js" />
+    <Content Include="JavaScript权威指南\16.05.classList.js" />
+    <Content Include="JavaScript权威指南\16.06.addStyles.js" />
+    <Content Include="JavaScript权威指南\17.01.whenReady.js" />
+    <Content Include="JavaScript权威指南\17.02.Drag.js" />
+    <Content Include="JavaScript权威指南\17.03.Enclose.js" />
+    <Content Include="JavaScript权威指南\17.04.draggable_clock.html" />
+    <Content Include="JavaScript权威指南\17.05.dndlist.js" />
+    <Content Include="JavaScript权威指南\17.06.InputFilter.js" />
+    <Content Include="JavaScript权威指南\17.07.forceToUpperCase.js" />
+    <Content Include="JavaScript权威指南\17.08.Keymap.js" />
+    <Content Include="JavaScript权威指南\18.01.postMessage.js" />
+    <Content Include="JavaScript权威指南\18.02.getText.js" />
+    <Content Include="JavaScript权威指南\18.03.get.js" />
+    <Content Include="JavaScript权威指南\18.04.encodeFormData.js" />
+    <Content Include="JavaScript权威指南\18.05.postData.js" />
+    <Content Include="JavaScript权威指南\18.06.getData.js" />
+    <Content Include="JavaScript权威指南\18.07.postJSON.js" />
+    <Content Include="JavaScript权威指南\18.08.postXML.js" />
+    <Content Include="JavaScript权威指南\18.09.autoUpload.js" />
+    <Content Include="JavaScript权威指南\18.10.postFormData.js" />
+    <Content Include="JavaScript权威指南\18.11.fileDropTarget.js" />
+    <Content Include="JavaScript权威指南\18.12.timedGetText.js" />
+    <Content Include="JavaScript权威指南\18.13.linkdetails.js" />
+    <Content Include="JavaScript权威指南\18.14.getJSONP.js" />
+    <Content Include="JavaScript权威指南\18.15.chatclient.html" />
+    <Content Include="JavaScript权威指南\18.16.EventSourceEmulation.js" />
+    <Content Include="JavaScript权威指南\18.17.chatserver.js" />
+    <Content Include="JavaScript权威指南\20.01.getCookies.js" />
+    <Content Include="JavaScript权威指南\20.02.CookieStorage.js" />
+    <Content Include="JavaScript权威指南\20.03.UserDataStorage.js" />
+    <Content Include="JavaScript权威指南\20.04.appcacheevents.js" />
+    <Content Include="JavaScript权威指南\20.06.permanote.html" />
+    <Content Include="JavaScript权威指南\20.07.permanote.js" />
+    <Content Include="JavaScript权威指南\21.01.rollover.js" />
+    <Content Include="JavaScript权威指南\21.02.PieChart.js" />
+    <Content Include="JavaScript权威指南\21.03.clock.html" />
+    <Content Include="JavaScript权威指南\21.04.polygons.js" />
+    <Content Include="JavaScript权威指南\21.05.graphics_state_utils.js" />
+    <Content Include="JavaScript权威指南\21.06.koch.js" />
+    <Content Include="JavaScript权威指南\21.07.curves.js" />
+    <Content Include="JavaScript权威指南\21.08.shadows.js" />
+    <Content Include="JavaScript权威指南\21.09.drawimage.js" />
+    <Content Include="JavaScript权威指南\21.10.smear.js" />
+    <Content Include="JavaScript权威指南\21.11.hitpath.js" />
+    <Content Include="JavaScript权威指南\21.12.hitpaint.js" />
+    <Content Include="JavaScript权威指南\21.13.sparkline.js" />
+    <Content Include="JavaScript权威指南\22.01.getmap.js" />
+    <Content Include="JavaScript权威指南\22.02.whereami.js" />
+    <Content Include="JavaScript权威指南\22.03.guessinggame.html" />
+    <Content Include="JavaScript权威指南\22.04.TwitterSearch.html" />
+    <Content Include="JavaScript权威指南\22.05.TwitterSearch.js" />
+    <Content Include="JavaScript权威指南\22.06.SmearImage.js" />
+    <Content Include="JavaScript权威指南\22.07.SmearWorker.js" />
+    <Content Include="JavaScript权威指南\22.08.AjaxWorker.js" />
+    <Content Include="JavaScript权威指南\22.09.getBlob.js" />
+    <Content Include="JavaScript权威指南\22.10.ImageThumbnailer.html" />
+    <Content Include="JavaScript权威指南\22.11.FileReader.html" />
+    <Content Include="JavaScript权威指南\22.12.FileTyper.html" />
+    <Content Include="JavaScript权威指南\22.13.fs.js" />
+    <Content Include="JavaScript权威指南\22.14.fsworker.js" />
+    <Content Include="JavaScript权威指南\22.15.zipcodes.html" />
+    <Content Include="JavaScript权威指南\22.16.wschatclient.html" />
+    <Content Include="JavaScript权威指南\22.17.wschatserver.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>21410</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:21410/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

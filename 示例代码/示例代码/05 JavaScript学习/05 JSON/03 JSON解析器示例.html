@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>JSON解析器示例</title>
+    <meta charset="utf-8" />
+    <script>
+        //定义一个JSON字符串，注意字符串需要引号括起来。由于JSON中存在双引号，故使用单引号括起来。
+        var jsonString = '{ \
+                                "employees" :\
+                                                [' +
+                                    '{ "firstName":"Bill" , "lastName":"Gates" },' +
+                                    '{ "firstName":"George" , "lastName":"Bush" },' +
+                                    '{ "firstName":"Thomas" , "lastName":"Carter" }\
+                                                ]\
+                          }';
+
+        var jsonObject = JSON.parse(jsonString);
+
+        /*
+           JavaScript 函数 eval() 可用于将 JSON 文本转换为 JavaScript 对象。
+           eval() 函数使用的是 JavaScript 编译器，可解析 JSON 文本，然后生成 JavaScript 对象。
+           必须把文本包围在括号中，这样才能避免语法错误：
+        */
+        var jsonObject = eval("(" + jsonString + ")");
+
+        document.write(jsonObject.employees[0].firstName + " " + jsonObject.employees[0].lastName + "<br/>");
+        document.write(jsonObject.employees[1].firstName + " " + jsonObject.employees[1].lastName + "<br/>");
+        document.write(jsonObject.employees[2].firstName + " " + jsonObject.employees[2].lastName + "<br/>");
+    </script>
+</head>
+<body>
+    <p>
+        <b>提示：</b>eval() 函数可编译并执行任何 JavaScript 代码。这隐藏了一个潜在的安全问题。
+        使用 JSON 解析器将 JSON 转换为 JavaScript 对象是更安全的做法。JSON 解析器只能识别 JSON 文本，而不会编译脚本。
+        在浏览器中，这提供了原生的 JSON 支持，而且 JSON 解析器的速度更快。
+        较新的浏览器和最新的 ECMAScript (JavaScript) 标准中均包含了原生的对 JSON 的支持。
+    </p>
+
+</body>
+</html>

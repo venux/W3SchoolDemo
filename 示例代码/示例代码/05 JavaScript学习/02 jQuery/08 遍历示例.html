@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>元素遍历示例</title>
+    <meta charset="utf-8" />
+    <style>
+        .ancestors {
+            display: block;
+            border: 2px solid lightgrey;
+            color: red;
+            padding: 5px;
+            margin: 15px;
+        }
+
+            .ancestors * {
+                display: block;
+                border: 2px solid lightgrey;
+                color: red;
+                padding: 5px;
+                margin: 15px;
+            }
+    </style>
+    <script src="jquery-2.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#parentTest").click(function () {
+                $("#parentTestEle").parent().css("border", "3px red solid");
+            });
+
+            $("#parentsTest").click(function () {
+                $("#parentsTestEle").parents().css("border", "3px red solid");
+            });
+
+            $("#parentsUntilTest").click(function () {
+                $("#parentTestEle").parentsUntil("ul").css("border", "3px red solid");
+            });
+
+            $("#childrenTest").click(function () {
+                $(".ancestors").children().css("border", "3px red solid");
+            });
+
+            $("#childrenWithParamTest").click(function () {
+                $(".ancestors").children("#childrenWithParamTestEle").css("border", "3px red solid");
+            });
+
+            $("#findTest").click(function () {
+                $(".ancestors").find("#parentsTestEle").css("border", "3px red solid");
+                $("#childrenWithParamTestEle").find("*").css("border", "3px red solid");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="ancestors">
+        <div style="width:500px;">
+            div (曾祖父)
+            <ul>
+                ul (祖父)
+                <li>
+                    li (直接父)
+                    <span id="parentTestEle">span</span>
+                </li>
+            </ul>
+        </div>
+
+        <div id="childrenWithParamTestEle" style="width:500px;">
+            div (祖父)
+            <p>
+                p (直接父)
+                <span id="parentsTestEle">span</span>
+            </p>
+        </div>
+    </div>
+
+    <hr />
+    <span>
+        parent() 方法返回被选元素的直接父元素。
+        该方法只会向上一级对 DOM 树进行遍历。
+    </span>
+    <input id="parentTest" type="button" value="parent()测试">
+    <br />
+
+    <hr />
+    <span>
+        parents() 方法返回被选元素的所有祖先元素，它一路向上直到文档的根元素。
+    </span>
+    <input id="parentsTest" type="button" value="parentsTest()测试">
+    <br />
+
+    <hr />
+    <span>
+        parentsUntil() 方法返回介于两个给定元素之间的所有祖先元素。
+    </span>
+    <input id="parentsUntilTest" type="button" value="parentsUntilTest()测试">
+    <br />
+
+    <hr />
+    <span>
+        children() 方法返回被选元素的所有直接子元素。
+        该方法只会向下一级对 DOM 树进行遍历。
+    </span>
+    <input id="childrenTest" type="button" value="childrenTest()测试">
+    <input id="childrenWithParamTest" type="button" value="childrenWithParamTest()测试">
+    <br />
+
+    <hr />
+    <span>
+        find() 方法返回被选元素的后代元素，一路向下直到最后一个后代。
+    </span>
+    <input id="findTest" type="button" value="find()测试">
+    <br />
+
+    <hr />
+
+    <ul>
+        <li>siblings()方法返回被选元素的所有同胞元素。</li>
+        <li>next()方法返回被选元素的下一个同胞元素。该方法只返回一个元素。</li>
+        <li>nextAll()方法返回被选元素的所有跟随的同胞元素。</li>
+        <li>nextUntil()方法返回介于两个给定参数之间的所有跟随的同胞元素。</li>
+        <li>prev()</li>
+        <li>prevAll()</li>
+        <li>prevUntil()</li>
+    </ul>
+  
+    <hr />
+    <ul>
+        <li>first() 方法返回被选元素的首个元素。</li>
+        <li>last() 方法返回被选元素的最后一个元素。</li>
+        <li>eq() 方法返回被选元素中带有指定索引号的元素。</li>
+        <li>filter() 方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回。</li>
+        <li>not() 方法返回不匹配标准的所有元素。</li> 
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>外边距合并示例</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        p {
+            padding: 10px;
+            text-align: center;
+        }
+
+        #test1 {
+            border: 1px solid red;
+            margin-bottom: 10px;         
+        }
+
+        #test2 {
+            border: 1px dashed blue;
+            margin-top: 50px;
+        }
+
+        #innerDiv {
+            border: 1px dotted black;
+            margin: 50px 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.w3school.com.cn/css/css_margin_collapsing.asp" target="_blank">CSS 外边距合并教程</a>
+
+    <div id="test1">
+        <div id="innerDiv">
+            <p>当一个元素包含在另一个元素中时（假设没有内边距或边框把外边距分隔开），它们的上和/或下外边距也会发生合并。</p>
+        </div>
+        <!--<p>当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并。</p>-->
+
+    </div>
+    <div id="test2">
+        <p>当一个元素出现在另一个元素上面时，第一个元素的下外边距与第二个元素的上外边距会发生合并。</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>拖放示例</title>
+    <meta charset="utf-8" />
+
+    <style>
+        .div {
+            margin: 0px 10%;
+            width: 100px;
+            height: 80px;
+            border: 1px solid red;
+            background-color: black;
+        }
+
+        #img {
+            width: 100px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        拖放示例：
+        1.设置元素为可拖放状态；
+        2.拖动：ondragstart和setData
+        3.放到何处：ondragover
+        4.放置：ondrop.
+    -->
+    <a href="http://www.w3school.com.cn/html5/html_5_draganddrop.asp" target="_blank"><p>拖放示例</p></a>
+    <img id="img" src="资源/Koala.jpg" draggable="true" ondragstart="dragstart(event);" />
+    <div class="div" ondragover="dragover(event);" ondrop="drop(event);"></div>
+    <div class="div" ondragover="dragover(event);" ondrop="drop(event);"></div>
+    <script type="text/javascript">
+
+        //2.开始拖动
+        function dragstart(ev) {
+            ev.dataTransfer.setData("Text", ev.target.id);
+        }
+
+        //3.放到何处 - ondragover
+        function dragover(ev) {
+            ev.preventDefault();
+        }
+
+        //4.进行放置 - ondrop
+        function drop(ev) {
+            ev.preventDefault();
+
+            var data = ev.dataTransfer.getData("Text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+    </script>
+</body>
+</html>

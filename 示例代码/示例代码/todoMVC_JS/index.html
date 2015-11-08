@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+       body {
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .input {
+            margin: 1em auto;
+            display: block;
+            padding: .5em 1em;
+            min-width: 90%;
+        }
+
+        .list {
+            text-align: center;
+            list-style-type: none;
+            -webkit-padding-start: 0;
+        }
+
+            .list > li {
+                max-width: 100%;
+                margin: .5em auto auto;
+                text-align: left;
+                display: block;
+            }
+
+            .list input {
+                display: inline-block;
+                opacity: 1;
+                vertical-align: text-top;
+            }
+
+                .list input:after {
+                    content:' ';
+                    width: 1.5em;
+                    height: 1.5em;
+                    background: none;
+                    border: 1px solid lightgray;
+                    border-radius: 50%;
+                    display: inline-block;
+                    opacity: 1;
+                }
+
+                .list input:checked {
+                    content:' ';
+                    color: white;
+                    background: darkblue;
+                }
+
+                    .list input:checked + span {
+                        text-decoration: line-through;
+                        color: gray;
+                    }
+
+            .list > li > img {
+                float: right;
+                display: inline-block;
+                color: orangered;
+                transform: scaleX(1.5);
+                font-family: cursive;
+                cursor: pointer;
+                opacity: .1;
+            }
+
+            .list > li:hover > img {
+                opacity: 1;
+            }
+    </style>
+
+</head>
+<body>
+    <input type="text" id="input" class="input" placeholder="请输入您想输入的内容！" width="800" height="250" />
+    <div id="div" class="div">
+        <ol id="list" class="list"></ol>
+    </div>
+
+    <script type="text/javascript">
+        //另一种方式获取输入控件，前提是知道输入控件的位置
+        //var inputCtrl = document.getElementsByTagName("input")[0];
+        var inputCtrl = document.getElementById("input");
+
+        inputCtrl.addEventListener("keyup", function (e) {
+            //回车的keyCode为13
+            if (e.keyCode == 13) {
+                todo(this.value);
+                this.value = "";
+            }
+        });
+
+        function todo() {
+            //获取方法传入的参数，如果为空或者长度为0，返回
+            if (arguments == null || arguments.length == 0)
+                return;
+
+            var value = arguments[0].trim();
+
+            if (value) {
+                //浏览器控制台消息提醒
+                console.info(value);
+
+                /*
+                    定义一个子项
+                    内容为文本框输入的值，默认不选中！
+                    相当于C#中的自定义一个Model，包含两个自定义属性content和checked
+                */
+                var itemValue = {
+                    content: arguments[0],
+                    checked: false
+                };
+
+                var item = createItem(itemValue);
+                AddItem(item);
+            }
+        }
+
+        //创建列表的单项li
+        function createItem(item) {
+
+            //创建单项的CheckBox
+            var input = document.createElement("input");
+            input.setAttribute("type", "checkbox");
+
+            if (item.checked)
+                input.setAttribute("checked");
+
+            //创建单项内容的p标签
+            var span = document.createElement("span");
+            span.setAttribute("id", "content");
+
+            var label = document.createElement("label");
+            label.setAttribute("for", "content");
+            label.textContent = item.content;
+
+            var img = document.createElement("img");
+            img.setAttribute("src", "delete.png");
+            img.addEventListener("click", function (e) {
+
+                //var templi = img.parentElement;
+                //var tempCheckBox = templi.childNodes.forEach(function (temp) {
+                //    if (temp.valueof(input))
+                //        return temp
+                //});
+
+                //if (tempCheckBox.checked)
+                li.parentNode.removeChild(li);
+                //else
+                //    alert("未选中该项，无法删除！");
+            });
+
+            var li = document.createElement("li");
+            li.appendChild(input);
+            li.appendChild(span);
+            li.appendChild(label);
+            li.appendChild(img);
+
+            return li;
+        }
+
+        //给list添加单项
+        function AddItem(item) {
+            var list = document.getElementById("list");
+            list.appendChild(item);
+            console.log("添加成功！")
+        }
+
+    </script>
+</body>
+</html>

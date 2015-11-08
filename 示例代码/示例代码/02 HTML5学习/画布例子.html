@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>画布例子</title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        #myCanvas {
+            border: 1px solid red;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function showLocation(e) {
+            document.getElementById("location").innerHTML = "X:" + e.clientX + " Y:" + e.clientY;
+        }
+
+        function clearLocation() {
+            document.getElementById("location").innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="400" onmousemove="showLocation(event)" onmouseout="clearLocation()">
+        您的浏览器不支持画布标签，请更换浏览器重试！
+    </canvas>
+    <br />
+    <p id="location"></p>
+    <input type="button" value="矩形" onclick="drawRect()" />
+    &nbsp;
+    <input type="button" value="直线" onclick="drawLine()" />
+    &nbsp;
+    <input type="button" value="圆" onclick="drawCircle()" />
+    &nbsp;
+    <input type="button" value="渐变" onclick="drawLinearGradient()" />
+    &nbsp;
+    <input type="button" value="照片" onclick="drawPic()" />
+
+    <script type="text/javascript">
+        var myCanvas = document.getElementById("myCanvas");
+        //&&若第一个表达式为真则取第二个表达式的值
+        var context = myCanvas && myCanvas.getContext("2d");
+
+        function drawRect() {
+            //if (!myCanvas)
+            //    return;
+
+            context.fillStyle = "#ff0000";
+            context.fillRect(100, 100, 200, 100)
+        }
+
+        function drawLine() {
+            context.moveTo(100, 100);
+            context.lineTo(200, 100);
+            context.lineTo(100, 200);
+            context.stroke();
+        }
+
+        function drawCircle() {
+            context.fillStyle = "#ff0000";
+            context.beginPath();
+
+            /*
+                方法的头 5 个参数指定了圆周的一个起始点和结束点。
+                调用这个方法会在当前点和当前子路径的起始点之间添加一条直线。
+                接下来，它沿着圆周，在子路径的起始点和结束点之间添加弧。
+                最后一个 counterclockwise 参数指定了圆应该沿着哪个方向遍历来连接起始点和结束点。
+                这个方法将当前位置设置为弧的终点。
+            */
+            context.arc(200, 200, 100, 0, Math.PI, true);
+            context.closePath();
+            context.fill();
+        }
+
+        /*
+            渐变
+        */
+        function drawLinearGradient() {
+            var gradient = context.createLinearGradient(100, 100, 200, 200);
+            gradient.addColorStop(0, "blue");
+            gradient.addColorStop(1, "red");
+            context.fillStyle = gradient;
+            context.fillRect(100, 100, 200, 200);
+        }
+
+        function drawPic() {
+
+            var img = new Image(100, 80);
+            img.src = "资源/koala.jpg";            
+            context.drawImage(img, 0, 0);
+        }
+
+      
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>定位示例</title>
+    <meta charset="utf-8" />
+    <style>
+        a {
+            display: block;
+            background-color: red;
+        }
+
+        div {
+            margin: 100px;
+            padding: 0px;
+            width: 800px;
+            height: 600px;
+            background-color: red;
+            position: absolute;
+            left: 300px;
+            top: 200px;
+        }
+
+            div #xddw {
+                /*
+                    相对定位：
+                */
+                position: relative;
+                left: 20px;
+            }
+
+            div #jddw {
+                position: absolute;
+                left: 20px;
+            }
+
+            div #gddw {
+                position: fixed;
+                left: 20px;
+            }
+
+        #test {
+            width: 250px;
+            height: 250px;
+            position: absolute;
+            top: 100px;
+            left: 150px;
+            background-color: black;
+            /*叠放次序*/
+            z-index: -1;
+            /*滚动条处理溢出*/
+            overflow: scroll;
+            /*自动处理溢出*/
+            /*overflow: auto;*/
+        }
+
+            #test p {
+                color: red;
+            }
+
+        #img {
+            width: 400px;
+            height: 300px;
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            /*位置的上右下左*/
+            clip: rect(0px 200px 150px 0px);
+        }
+
+        .txpl {
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.baidu.com">百度(块框示例)</a>
+    <br />
+
+    <div>
+        <p>正常位置</p>
+        <p id="xddw">
+            相对定位示例：相对于父元素的左上角位置来对其定位，左20。图像排列示例：
+            <img class="txpl" src="图像排列.gif" alt="找不到图像" title="图像排列测试" />
+        </p>
+        <br />
+        <p id="jddw">
+            绝对定位示例：相对于父元素的左上角位置来对其定位，左20。
+            <img class="txpl" src="图像排列.gif" alt="找不到图像" title="图像排列测试" />
+        </p>
+        <br />
+        <p id="gddw">固定定位示例：相对于浏览器窗口的左上角位置来对其定位，窗口改变大小时也不改变位置，左20</p>
+    </div>
+
+    <div id="test">
+        <p>z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试z-index测试以及滚动条测试</p>
+    </div>
+
+    <img id="img" src="Tulips.jpg" title="裁剪图像示例" alt="图像丢失" />
+
+</body>
+</html>

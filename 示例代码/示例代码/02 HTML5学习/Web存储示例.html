@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Web存储示例.html</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <!--localStorage和sessionStorage-->
+    <script type="text/javascript">
+        //localStorage 方法存储的数据没有时间限制。
+        //第二天、第二周或下一年之后，数据依然可用。
+        function localStorageTest() {
+            //判断浏览器是否支持localStorage
+            if (typeof window.localStorage != "undefined") {
+                //if (window.localStorage) {
+                if (localStorage.pagecount) {
+                    localStorage.pagecount = Number(localStorage.pagecount) + 1;
+                }
+                else {
+                    localStorage.pagecount = 0;
+                }
+                document.write("localStorage共访问【" + localStorage.pagecount + "】次本网页！");
+            }
+            else {
+                alert("您的浏览器不支持本地存储，还弄个毛啊！");
+            }
+        }
+
+        //sessionStorage 方法针对一个 session 进行数据存储。
+        //当用户关闭浏览器窗口后，数据会被删除。
+        function sessionStorageTest() {
+            if (sessionStorage.pagecount) {
+                sessionStorage.pagecount = Number(sessionStorage.pagecount) + 1;
+            }
+            else {
+                sessionStorage.pagecount = 0;
+            }
+            document.write("sessionStorage共访问【" + sessionStorage.pagecount + "】次本网页！");
+        }
+
+        //获取localStorage所有键值对
+        function getAllDataOflocalStorage() {
+            document.write("localStorage所有键值：<br/>");
+
+            var storage = window.localStorage;
+
+            for (var i = 0, len = storage.length; i < len; i++) {
+                var key = storage.key(i);
+                var value = storage.getItem(key);
+
+                document.write("key:"+key+" value:"+value+";<br/>");
+            }
+        }
+
+    </script>
+
+    <input type="button" value="localStorage测试" onclick=" localStorageTest()" />
+    &nbsp;
+    <input type="button" value="sessionStorage测试" onclick=" sessionStorageTest()" />
+    &nbsp;
+    <input type="button" value="获取localStorage所有键值" onclick=" getAllDataOflocalStorage()" />
+</body>
+</html>

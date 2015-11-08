@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        @media screen {
+            p {
+                font-family: Verdana,sans-serif;
+                font-size: 14px;
+            }
+        }
+
+        @media print {
+            p {
+                font-family: 'Times New Roman',serif;
+                font-size: 14px;
+            }
+        }
+
+        @media screen,print {
+            p {
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>
+        媒介类型(Media Types)允许你定义以何种媒介来提交文档。文档可以被显示在显示器、纸媒介或者听觉浏览器等等。
+        <br />
+        @media 规则使你有能力在相同的样式表中，使用不同的样式规则来针对不同的媒介。
+        这个例子中的样式告知浏览器在显示器上显示 14 像素的 Verdana 字体。
+        但是假如页面需要被打印，将使用 10 个像素的 Times 字体。
+        注意：font-weight 被设置为粗体，不论显示器还是纸媒介。
+    </p>
+</body>
+</html>

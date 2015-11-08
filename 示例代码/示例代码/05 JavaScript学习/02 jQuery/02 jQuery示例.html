@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuery示例</title>
+    <meta charset="utf-8" />
+    <script src="jquery-2.1.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("p").click(function () {
+                $(this).hide();
+            });
+
+            $("#btn").click(function () {
+                $("p").css("color", "red");
+            });
+        });
+    </script>
+</head>
+<body>
+    <p>点击后消失</p>
+    <input id="btn" type="button" value="改变颜色" />
+</body>
+</html>

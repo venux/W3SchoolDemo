@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AJAX高级示例 XML</title>
+    <meta charset="utf-8" />
+    <script>
+        var xmlhttp;
+
+        function getData() {
+            loadXMLDoc('CDData.xml', function () {
+
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var result = "\
+                        <table border='1'>\
+                            <tr>\
+                                <th>标题</th>\
+                                <th>作者</th>\
+                                <th>国家</th>\
+                                <th>公司</th>\
+                                <th>价格</th>\
+                                <th>年份</th>\
+                            </tr>";
+
+                    var cdDatas = xmlhttp.responseXML.documentElement.getElementsByTagName("CD");
+
+                    for (var index = 0; index < cdDatas.length; index++) {
+                        result += "<tr>";
+
+                        var cdData = cdDatas[index];
+
+                        //标题
+                        var titleValue = cdData.getElementsByTagName("TITLE");
+
+                        result += "<td>";
+
+                        if (titleValue[0].firstChild != null)
+                            result += titleValue[0].firstChild.nodeValue;
+
+                        result += "</td>";
+
+                        //作者
+                        var authorValue = cdData.getElementsByTagName("ARTIST");
+
+                        result += "<td>";
+
+                        if (authorValue[0].firstChild != null)
+                            result += authorValue[0].firstChild.nodeValue;
+
+                        result += "</td>";
+
+                        //国家
+                        var countryValue = cdData.getElementsByTagName("COUNTRY");
+
+                        result += "<td>";
+
+                        if (countryValue[0].firstChild != null)
+                            result += countryValue[0].firstChild.nodeValue;
+
+                        result += "</td>";
+
+                        //公司
+                        var companyValue = cdData.getElementsByTagName("COMPANY");
+
+                        result += "<td>";
+
+                        if (companyValue[0].firstChild != null)
+                            result += companyValue[0].firstChild.nodeValue;
+
+                        result += "</td>";
+
+                        //价格
+                        var priceValue = cdData.getElementsByTagName("PRICE");
+
+                        result += "<td>";
+
+                        if (priceValue[0].firstChild != null)
+                            result += priceValue[0].firstChild.nodeValue;
+
+                        result += "</td>";
+
+                        //年份
+                        var yearValue = cdData.getElementsByTagName("YEAR");
+
+                        result += "<td>";
+
+                        if (yearValue[0].firstChild != null)
+                            result += yearValue[0].firstChild.nodeValue;
+
+                        result += "</td>";
+
+                        result += "</tr>";
+                    }
+
+                    document.getElementById("txtCDInfo").innerHTML = result;
+                }
+            });
+        }
+
+        function loadXMLDoc(url, callbackFunc) {
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xmlhttp.onreadystatechange = callbackFunc;
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+    </script>
+</head>
+<body>
+    <div id="txtCDInfo">
+        <button onclick="getData()">获得 CD 信息</button>
+    </div>
+</body>
+</html>

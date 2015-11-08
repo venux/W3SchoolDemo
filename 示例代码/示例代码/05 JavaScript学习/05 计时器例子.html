@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>计时器例子</title>
+    <meta charset="utf-8" />
+    <script>
+        function delayMsgbox() {
+            //三秒后弹出消息框
+            setTimeout(msg, 3000);
+        }
+        function msg() {
+            alert("延时消息框");
+        }
+
+        function showMsgWithYesNo() {
+            /*确认对话框*/
+            var v = window.confirm("是否取消？");
+            alert(v == true);
+        }
+
+        function showMsgWithInput() {
+            //提示消息框
+            var v = window.prompt("请输入您的姓名：", "venux");
+            alert("您好，" + v + "！欢迎您~");
+        }
+
+        //用于停止计时
+        var time;
+
+        function showTime() {
+
+            var divNode = document.getElementsByTagName("div")[0];
+
+            if (divNode == undefined || divNode == null) {
+                alert("找不到根节点！");
+                return;
+            }
+
+            var timeNode = document.getElementById("time");
+
+            if (timeNode == undefined || timeNode == null) {
+                timeNode = document.createElement("p");
+                var timeNodeText = document.createTextNode(new Date());
+                timeNode.setAttribute("id", "time");
+
+                timeNode.appendChild(timeNodeText);
+                divNode.appendChild(timeNode);
+            }
+            else {
+                timeNode.innerHTML = new Date();
+            }
+
+            time=setTimeout(showTime, 1000);
+        }
+
+        function stopTime() {
+            clearTimeout(time);
+        }
+    </script>
+</head>
+<body onload="showTime()">
+    <div>
+        <input type="button" value="延时消息框" onclick="delayMsgbox()" />
+        <input type="button" value="确认消息框" onclick="showMsgWithYesNo()" />
+        <input type="button" value="提示消息框" onclick="showMsgWithInput()" />
+        <input type="button" value="停止计时" onclick="stopTime()" />
+    </div>
+</body>
+</html>

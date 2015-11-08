@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <style>
+        div {
+            border: 1px solid red;
+            margin: 100px auto;
+            width: 400px;
+            height: 300px;
+            text-align: center;
+        }
+
+        #div1 {
+            transform: rotate(30deg);
+        }
+
+        #div2 {
+            /*transform: translate(-300px -300px);*/
+            transform: translate(50px,100px);
+            -ms-transform: translate(50px,100px); /* IE 9 */
+            -moz-transform: translate(50px,100px); /* Firefox */
+            -webkit-transform: translate(50px,100px); /* Safari and Chrome */
+            -o-transform: translate(50px,100px); /* Opera */
+        }
+
+        #div3 {
+            transform: scale(1.5,1.5);
+        }
+
+        #div4 {
+            transform: skew(30deg,20deg);
+        }
+
+        #div5 {
+            transform: matrix(0.866,0.5,-0.5,0.866,0,0);
+            -ms-transform: matrix(0.866,0.5,-0.5,0.866,0,0); /* IE 9 */
+            -moz-transform: matrix(0.866,0.5,-0.5,0.866,0,0); /* Firefox */
+            -webkit-transform: matrix(0.866,0.5,-0.5,0.866,0,0); /* Safari and Chrome */
+            -o-transform: matrix(0.866,0.5,-0.5,0.866,0,0); /* Opera */
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.w3school.com.cn/css3/css3_2dtransform.asp">CSS3 2D转换</a>
+
+    <div id="div1">
+        <p>2D 转换:rotate旋转</p>
+        <p>通过 rotate() 方法，元素顺时针旋转给定的角度。允许负值，元素将逆时针旋转。</p>
+    </div>
+    <br /><br /><br />
+    <div id="div2">
+        <p>2D 转换:translate平移</p>
+        <p>通过 translate() 方法，元素从其当前位置移动，根据给定的 left（x 坐标） 和 top（y 坐标） 位置参数</p>
+    </div>
+    <br /><br /><br />
+    <div id="div3">
+        <p>2D 转换:scale缩放</p>
+        <p>通过 scale() 方法，元素的尺寸会增加或减少，根据给定的宽度（X 轴）和高度（Y 轴）参数</p>
+    </div>
+    <br /><br /><br />
+    <div id="div4">
+        <p>2D 转换:skew翻转</p>
+        <p>通过 skew() 方法，元素翻转给定的角度，根据给定的水平线（X 轴）和垂直线（Y 轴）参数</p>
+    </div>
+    <br /><br /><br />
+    <div id="div5">
+        <p>2D 转换:matrix 方法把所有 2D 转换方法组合在一起。</p>
+        <p>matrix() 方法需要六个参数，包含数学函数，允许您：旋转、缩放、移动以及倾斜元素。</p>
+    </div>
+
+
+</body>
+</html>

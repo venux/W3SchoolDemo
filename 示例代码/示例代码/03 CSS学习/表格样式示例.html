@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+	<meta charset="utf-8" />
+    <style type="text/css">
+        table{
+            /*
+                单线框
+                表格具有双线条边框。
+                这是由于 table、th 以及 td 元素都有独立的边框。
+                如需把表格显示单线条边框，请使用 border-collapse 属性。
+            */
+            border-collapse:collapse;
+            width:500px;
+
+            table-layout:fixed;
+
+            /*border-collapse未修改的时候才可以用border-spacing*/
+            /*border-spacing:10px 10px;*/
+        }
+
+        table,th,td{
+            border:1px solid red;
+            padding:0px 0px;
+        }
+
+        th,td{
+            /*padding:0px 0px;*/
+            /*border:2px dashed blue;*/
+            text-align:center;
+        }
+
+        th{
+            height:50px;
+            vertical-align:top;
+            background-color:red;
+            color:yellow;
+        }
+
+        td{
+            empty-cells:show;
+        }
+
+        caption{
+            caption-side:bottom;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption>标题</caption>
+        <tr>
+            <th rowspan="2">两行列头</th>
+            <th>列头</th>
+            <th>列头</th>
+        </tr>
+        <tr>
+            <!--<td></td>-->
+            <td colspan="2">两列单元格</td>
+            <!--<td></td>-->
+        </tr>
+        <tr>
+            <td></td>
+            <td>单元格2</td>
+            <td>单元格3</td>
+        </tr>
+    </table>
+</body>
+</html>

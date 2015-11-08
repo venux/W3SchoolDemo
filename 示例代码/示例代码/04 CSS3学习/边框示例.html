@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>边框示例</title>
+    <meta charset="utf-8" />
+
+    <style>
+        div {
+            border: 1.5px solid red;
+            width: 120px;
+            height: 50px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        #div1 {
+            /*
+                圆角
+                第一个参数左上和右下的角度
+                第二个参数右上和左下的角度
+                0为直角
+            */
+            border-radius: 25px 0px;
+            /*兼容老的Firefox浏览器*/
+            /*-moz-border-radius:25px;*/
+        }
+
+        #div2 {
+            /*box-shadow: h-shadow v-shadow blur spread color inset;*/
+            box-shadow: 20px 10px 5px 3px gray;
+        }
+
+        #div3 {
+            border: 15px solid transparent;
+            width: 300px;
+            height: 150px;
+            /*注意将边框设置为透明效果*/
+            border-image: url(边框图片.png) 30 30 round;
+            -webkit-border-image: url(边框图片.png) 30 30 round;
+            -moz-border-image: url(边框图片.png) 30 30 round;
+            -o-border-image: url(边框图片.png) 30 30 round;
+        }
+
+         #div4 {
+            border: 15px solid transparent;
+            width: 300px;
+            height: 150px;
+            /*注意将边框设置为透明效果*/
+            border-image: url(边框图片.png) 30 30 stretch;
+            -webkit-border-image: url(边框图片.png) 30 30 stretch;
+            -moz-border-image: url(边框图片.png) 30 30 stretch;
+            -o-border-image: url(边框图片.png) 30 30 stretch;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <p>矩形圆角边框示例</p>
+    </div>
+    <br />
+    <div id="div2">
+        <p>边框阴影示例</p>
+    </div>
+    <br />
+    <div id="div3">
+        <p>边框图片示例-round</p>
+    </div>
+    <div id="div4">
+        <p>边框图片示例-stretch</p>
+    </div>
+</body>
+</html>

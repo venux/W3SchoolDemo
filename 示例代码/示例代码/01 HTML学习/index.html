@@ -1,0 +1,447 @@
+﻿<!--声明HTML标准版本-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="CSS/StyleSheet1.css" type="text/css" />
+    <style>
+        h1 {
+            text-align: center;
+            color: red;
+        }
+
+        p {
+            color: blue;
+        }
+
+            p.tip span {
+                font-weight: bold;
+                color: #ff9955;
+            }
+    </style>
+</head>
+<!--属性：背景色-->
+<body bgcolor="yellow">
+    <a href="http://www.w3school.com.cn/html/html_quick.asp" target="_blank">HTML元素快速参考</a>
+
+    <!--顶部标签-->
+    <a name="top"></a>
+
+    <!--标题-->
+    <h1>标题h1</h1>
+    <h2>标题h2</h2>
+    <h3>标题h3</h3>
+    <h4>标题h4</h4>
+    <h5>标题h5</h5>
+    <h6>标题h6</h6>
+
+    <!--段落-->
+    <p>段落</p>
+
+    <!--链接，属性-->
+    <a href="http://www.w3school.com.cn">链接</a>
+
+    <!--换行,空元素-->
+    <br />
+
+    <!--图像-->
+    <img src="Sample Pictures/Chrysanthemum.jpg" width="400" height="300" />
+
+    <!--
+        不要忘记结束标签
+        即使您忘记了使用结束标签，大多数浏览器也会正确地显示 HTML：
+        <p>This is a paragraph
+        上面的例子在大多数浏览器中都没问题，但不要依赖这种做法。忘记使用结束标签会产生不可预料的结果或错误。
+        注释：未来的 HTML 版本不允许省略结束标签。
+     -->
+    <!--<p>忘了结束标签，最好别这样做。-->
+    <!--
+        大小写不敏感
+        HTML 标签对大小写不敏感：<P> 等同于 <p>。许多网站都使用大写的 HTML 标签。
+        W3School 使用的是小写标签，因为万维网联盟（W3C）在 HTML 4 中推荐使用小写，而在未来 (X)HTML 版本中强制使用小写。
+    -->
+    <P>大小写不敏感</P>
+
+    <!--属性：文字居中-->
+    <h1 align="center">属性</h1>
+
+    <!--属性：表格边框-->
+    <table border="1">
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+
+    <!--
+        所有HTML元素具有的几个属性:
+        accesskey	                                  规定激活元素的快捷键。
+        class	                                      规定元素的一个或多个类名（引用样式表中的类）。
+        contenteditable	                              规定元素内容是否可编辑。
+        contextmenu	                                  规定元素的上下文菜单。上下文菜单在用户点击元素时显示。
+        data-*	                                      用于存储页面或应用程序的私有定制数据。
+        dir	规定元素中内容的文本方向。
+        draggable	规定元素是否可拖动。
+        dropzone	规定在拖动被拖动数据时是否进行复制、移动或链接。
+        hidden	规定元素仍未或不再相关。
+        id	规定元素的唯一 id。
+        lang	规定元素内容的语言。
+        spellcheck	规定是否对元素进行拼写和语法检查。
+        style	规定元素的行内 CSS 样式。
+        tabindex	规定元素的 tab 键次序。
+        title	规定有关元素的额外信息。
+        translate	规定是否应该翻译元素内容。
+    -->
+    <br />
+    <table border="1" cellpadding="0" margin="0">
+        <tr align="center">
+            <th>属性名称</th>
+            <th>是HTML5标签</th>
+            <th>描述</th>
+        </tr>
+        <tr>
+            <td>accesskey</td>
+            <td></td>
+            <td>规定激活元素的快捷键。</td>
+        </tr>
+        <tr>
+            <td>class</td>
+            <td></td>
+            <td>规定元素的一个或多个类名（引用样式表中的类）。</td>
+        </tr>
+        <tr>
+            <td>contenteditable</td>
+            <td>是</td>
+            <td>规定元素内容是否可编辑。</td>
+        </tr>
+        <tr>
+            <td>contextmenu	</td>
+            <td>是</td>
+            <td>规定元素的上下文菜单。上下文菜单在用户点击元素时显示。</td>
+        </tr>
+        <tr>
+            <td>data-*</td>
+            <td>是</td>
+            <td>用于存储页面或应用程序的私有定制数据。</td>
+        </tr>
+        <tr>
+            <td>dir</td>
+            <td></td>
+            <td>规定元素中内容的文本方向。</td>
+        </tr>
+        <tr>
+            <td>draggable</td>
+            <td></td>
+            <td>规定元素是否可拖动。</td>
+        </tr>
+        <tr>
+            <td>dropzone</td>
+            <td>是</td>
+            <td>规定在拖动被拖动数据时是否进行复制、移动或链接。</td>
+        </tr>
+        <tr>
+            <td>hidden</td>
+            <td>是</td>
+            <td>规定元素仍未或不再相关。</td>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td></td>
+            <td>规定元素的唯一 id。</td>
+        </tr>
+        <tr>
+            <td>lang</td>
+            <td></td>
+            <td>规定元素内容的语言。</td>
+        </tr>
+        <tr>
+            <td>spellcheck</td>
+            <td>是</td>
+            <td>规定是否对元素进行拼写和语法检查。</td>
+        </tr>
+        <tr>
+            <td>style</td>
+            <td></td>
+            <td>规定元素的行内 CSS 样式。</td>
+        </tr>
+        <tr>
+            <td>tabindex</td>
+            <td></td>
+            <td>规定元素的 tab 键次序。</td>
+        </tr>
+        <tr>
+            <td>title</td>
+            <td></td>
+            <td>规定有关元素的额外信息。</td>
+        </tr>
+        <tr>
+            <td>translate</td>
+            <td>是</td>
+            <td>规定是否应该翻译元素内容。</td>
+        </tr>
+    </table>
+    <br />
+    <p class="class" id="id" style="font-style:italic" title="title" dir="rtl" lang="en" draggable="true" contenteditable="true" translate="yes">大多数HTML元素具有的几个属性</p>
+
+    <!--默认情况下，HTML 会自动地在块级元素前后添加一个额外的空行，比如段落、标题元素前后。-->
+    <h1>标题</h1>
+
+    <!--水平线-->
+    <hr />
+
+    <!--注释-->
+    <a href="http://www.w3school.com.cn/tags/html_ref_eventattributes.asp">HTML 事件属性</a>
+
+    <!--段落与换行-->
+    <p>这是完整的换行<br />，属于一个段落</p>
+
+    <!--文本格式化-->
+    <b>粗体</b>
+    <br />
+    <strong>重要</strong>
+    <br />
+    <big>大</big>
+    <br />
+    <em>强调</em>
+    <br />
+    <i>斜体</i>
+    <br />
+    <small>小</small>
+    <br />
+    下标<sub>2</sub>
+    <br />
+    上标<sup>2</sup>
+    <br />
+
+    <!--预格式化：保留文本中的空格和换行-->
+    <pre>
+        预格式化内部文本的空   格和
+        换
+        行
+        会保留的。
+        适合代码展示：
+                        code!  !  !
+    </pre>
+
+    <!--计算机输出标签-->
+    <code>代码</code>
+    <kbd>键盘输入</kbd>
+    <tt>Teletype text</tt>
+    <smap>Sample text</smap>
+    <var>变量</var>
+
+    <!--地址-->
+    <address>地址</address>
+
+    <br />
+    <!--缩写显示说明-->
+    <abbr title="鲁文祥">祥</abbr>
+    <br />
+    <acronym title="World Wide Web">WWW</acronym>
+    <br />
+    <p>在某些浏览器中，当您把鼠标移至缩略词语上时，title 可用于展示表达的完整版本。</p>
+    <p>仅对于 IE 5 中的 acronym 元素有效。</p>
+    <p>对于 Netscape 6.2 中的 abbr 和 acronym 元素都有效。</p>
+
+    <!--改变文字方向-->
+    <bdo dir="rtl">如果您的浏览器支持 bi-directional override (bdo)，会从右向左输出 (rtl)。</bdo>
+
+    <!--长短引用-->
+    <blockquote>长引用</blockquote>
+    <q>短引用</q>
+    <br />
+    <!--删除字和插入字-->
+    <del>删除字</del>
+    <ins>插入字</ins>
+
+    <!--样式：内联-->
+    <h1>内联样式</h1>
+    <p>样式示例</p>
+
+    <!--没有下划线的链接-->
+    <a href="http://www.baidu.com" style="text-decoration:none">没有下划线的链接</a>
+
+    <br />
+    <h1 id="test">链接外部样式表</h1>
+
+    <div>
+        <p><a href="http://www.w3school.com.cn/tags/tag_div.asp">DIV用法</a></p>
+    </div>
+
+    <br />
+
+    <span>提示：请使用span标签来组合行内元素，以便通过样式来格式化它们。<br />注释：span 没有固定的格式表现。当对它应用样式时，它才会产生视觉上的变化。</span>
+
+    <br />
+
+    <!--图像超链接-->
+    <p>图像超链接</p>
+    <br />
+    <a href="http://www.baidu.com"><img src="Sample Pictures/Chrysanthemum.jpg" title="图像超链接" width="100" /></a>
+
+    <!--超链接跳转-->
+    <p><a href="test.html">本地网站</a></p>
+
+    <!--链接到本页指定地方，用name属性-->
+    <a href="#top">回到顶部</a>
+    <br />
+
+    <!--通过新窗口打开新地址-->
+    <a href="http://www.w3school.com.cn" target="_blank">W3School</a>
+    <br />
+    <!--图像标签的替换文本属性-->
+    <img src="Sample Pictures/Desert1.jpg" alt="找不到图片！" />
+    <br />
+
+    <p>图片<img src="Sample Pictures/Desert.jpg" height="100" align="middle" />与文字排<img src="Sample Pictures/Desert.jpg" height="100" align="left" />啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊列测试！</p>
+
+    <!--创建图片映射-->
+    <a href="http://www.w3school.com.cn/tiy/t.asp?f=html_areamap" color="red"><h1>重要：图片映射</h1></a>
+    <br />
+
+    <!--图片映射-->
+    <img src="Sample Pictures/图像映射.png" border="0" usemap="#planetmap" alt="Planets" />
+
+    <map name="planetmap" id="planetmap">
+        <area shape="rect"
+              coords="0,0,200,200"
+              href="http://www.baidu.com"
+              target="_blank"
+              alt="百度" />
+
+        <area shape="rect"
+              coords="200,0,400,200"
+              href="http://www.163.com"
+              target="_blank"
+              alt="网易" />
+
+        <area shape="rect"
+              coords="0,200,200,400"
+              href="http://www.zhihu.com"
+              target="_blank"
+              alt="知乎" />
+    </map>
+    <p><b>注释：</b>img 元素中的 "usemap" 属性引用 map 元素中的 "id" 或 "name" 属性（根据浏览器），所以我们同时向 map 元素添加了 "id" 和 "name" 属性。</p>
+
+    <!--表格,border边框大小-->
+    <table border="3">
+        <caption>表格标题</caption>
+        <tr>
+            <th colspan="2">表头</th>
+        </tr>
+        <tr>
+            <td>第一行第一列</td>
+            <td>第一行第二列</td>
+        </tr>
+        <tr>
+            <td>第二行第一列</td>
+        </tr>
+        <tr>
+            <td>第三行第一列</td>
+        </tr>
+        <tr>
+            <!--
+                在一些浏览器中，没有内容的表格单元显示得不太好。如果某个单元格是空的（没有内容），浏览器可能无法显示出这个单元格的边框。
+                注意：这个空的单元格的边框没有被显示出来。为了避免这种情况，在空单元格中添加一个空格占位符，就可以将边框显示出来。
+            -->
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td rowspan="2"> 跨行合并单元格</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+
+    <!--单元格内边距,间距-->
+    <table border="0" cellpadding="10" cellspacing="50" bgcolor="red" background="Sample Pictures/图像映射.png" frame="above">
+        <caption>单元格属性</caption>
+        <tr bgcolor="blue">
+            <th colspan="2">表头</th>
+        </tr>
+        <tr>
+            <td>第一行第一列</td>
+            <td>第一行第二列</td>
+        </tr>
+        <tr>
+            <td align="left">第二行第一列</td>
+        </tr>
+        <tr>
+            <td align="right">第三行第一列</td>
+        </tr>
+        <tr>
+            <!--
+                在一些浏览器中，没有内容的表格单元显示得不太好。如果某个单元格是空的（没有内容），浏览器可能无法显示出这个单元格的边框。
+                注意：这个空的单元格的边框没有被显示出来。为了避免这种情况，在空单元格中添加一个空格占位符，就可以将边框显示出来。
+            -->
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td rowspan="2"> 跨行合并单元格</td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+    </table>
+    <br />
+
+    <!--列表-->
+    <ul type="circle">
+        <li>无序列表1</li>
+        <li>无序列表2</li>
+        <li>无序列表3</li>
+    </ul>
+    <br />
+    <ol type="A">
+        <li>有序列表1</li>
+        <li>有序列表2</li>
+        <li>有序列表3</li>
+    </ol>
+
+    <!--自定义列表-->
+    <dl>
+        <dt>自定义列表A</dt>
+        <dd>自定义列表A1</dd>
+        <dd>自定义列表A2</dd>
+        <dd>自定义列表A3</dd>
+        <dt>自定义列表B</dt>
+        <dd>自定义列表B1</dd>
+        <dd>自定义列表B2</dd>
+        <dd>自定义列表B3</dd>
+    </dl>
+
+    <!--块级元素-->
+    <div style="color:blue">
+        <h6>块级元素DIV</h6>
+        <pre>块</pre>
+    </div>
+
+    <!--span样式-->
+    <p class="tip"><span>提示：</span>span配合样式使用！</p>
+
+    <!--表单-->
+    <a href="表单例子.html" target="_blank"><p>表单例子</p></a>
+
+    <!--框架-->
+    <a href="框架例子/框架例子.html" target="_blank"><p>框架实例</p></a>
+
+    <!--内联框架-->
+    <a href="框架例子/内联框架.html" target="_blank"><p>内联框架</p></a>
+
+    <a href="框架例子/iframeTest.html"><p>iframe示例</p></a>
+
+    <!--颜色-->
+    <a href="http://www.w3school.com.cn/html/html_colors.asp"><h1>颜色</h1></a>
+    <a href="http://www.w3school.com.cn/html/html_colors.asp"><h1>颜色名</h1></a>
+
+    <!--其他标签-->
+    &lt;&#169;&nbsp;&gt;
+</body>
+</html>

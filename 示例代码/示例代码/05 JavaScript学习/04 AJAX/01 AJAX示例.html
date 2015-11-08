@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AJAX示例</title>
+    <meta charset="utf-8" />
+    <script>
+        function ajaxTest() {
+
+        }
+
+        function getTest() {
+            var xmlhttp = createXMLHttpRequest();
+
+            /*
+                method：请求的类型 GET 或 POST
+                url：文件在服务器上的位置
+                async：true（异步）或 false（同步）
+            */
+            xmlhttp.open("GET", "信息网页.html", true);
+            xmlhttp.send();
+
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("result").innerHTML = xmlhttp.responseText;
+                }
+            }
+        }
+
+        function createXMLHttpRequest() {
+            var xmlhttp = null;
+
+            /*
+                为了应对所有的现代浏览器，包括 IE5 和 IE6，请检查浏览器是否支持 XMLHttpRequest 对象。
+                如果支持，则创建 XMLHttpRequest 对象。
+                如果不支持，则创建 ActiveXObject。
+            */
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            return xmlhttp;
+        }
+    </script>
+</head>
+<body>
+    <input id="btnGetData" type="button" value="请求数据" onclick="getTest()" />
+    <p id="result"></p>
+</body>
+</html>

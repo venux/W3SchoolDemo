@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML JS JSON示例</title>
+    <meta charset="utf-8" />
+    <script>
+        //定义一个JSON对象
+        var JSONObject = {
+            "name": "Bill Gates",
+            "street": "Fifth Avenus New York 666",
+            "age": 56,
+            "phone": "555 1234567"
+        };
+
+        function getData() {
+            document.getElementById("name").innerHTML = JSONObject.name;
+            document.getElementById("address").innerHTML = JSONObject.street;
+            document.getElementById("age").innerHTML = JSONObject.age;
+            document.getElementById("phone").innerHTML = JSONObject.phone;
+        }
+    </script>
+</head>
+<body>
+    <input id="btn" type="button" onclick="getData()" value="获取数据" />
+    <p>
+        姓名：<span id="name"></span><br/>
+        地址：<span id="address"></span><br />
+        年龄：<span id="age"></span><br />
+        电话：<span id="phone"></span><br />
+    </p>
+</body>
+</html>

@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Screen对象示例</title>
+    <meta charset="utf-8" />
+    <script>
+        function getInfoOfScreen() {
+            var result = "";
+            result += "屏幕可用宽度和高度为：\n(";
+            result += window.screen.availWidth + "," + window.screen.availHeight + ")";
+
+            alert(result);
+        }
+    </script>
+</head>
+<body>
+    <h1>window.screen 对象</h1>
+    <p>window.screen 对象包含有关用户屏幕的信息。</p>
+    <input type="button" value="屏幕可用宽高" onclick="getInfoOfScreen()" />
+</body>
+</html>

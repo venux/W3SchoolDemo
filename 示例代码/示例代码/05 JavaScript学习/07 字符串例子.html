@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>字符串例子</title>
+    <meta charset="utf-8" />
+    <script>
+        function addStringElement() {
+            document.write("<p>" + "添加字符串样式".bold().italics() + "</p>");
+        }
+
+        function testMatch() {
+            var str = "Hello World!";
+
+            alert(str.match("World"));
+        }
+
+        function testReplace() {
+            var str = "Hello World!";
+
+            alert(str.replace(/World/, "venux"));
+        }
+    </script>
+</head>
+<body>
+    <input id="addString" type="button" onclick="addStringElement()" value="添加字符" />
+    <hr />
+    <input type="button" onclick="testMatch()" value="Test_Match" />
+    <hr />
+    <input type="button" onclick="testReplace()" value="Test_Replace" />
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>示例简介</title>
+    <meta charset="utf-8" />
+
+    <script>
+        /*
+            如果在文档已完成加载后执行，会覆盖整个页面
+        */
+        function recoverHTML() {
+            //当字符串过长时，可以使用\来对文本字符串换行,效果和未换行一样
+            document.write("如果在文档已完成加载后执行，\
+            会覆盖整个页面~~~");
+        }
+
+        function btnclick() {
+            alert("Hello World!");
+        }
+
+        function changeHMTLValue() {
+            var test = document.getElementById("btn");
+            test.innerHTML = "改变HTML内容~";
+        }
+
+        function changeimg() {
+            var imgNode = document.getElementById("img");
+
+            if (imgNode.src.match("开"))
+                imgNode.src = "img/关.png";
+            else
+                imgNode.src = "img/开.png";
+        }
+
+
+        function changestyle() {
+            var imgNode = document.getElementById("img");
+
+            if (imgNode.style.width == "50px")
+                imgNode.style.width = "200px";
+            else
+                imgNode.style.width = "50px";
+        }
+
+        function isInputNumber() {
+            var element = document.getElementById("text");
+
+            var value = element.value;
+
+            if (isNaN(value))
+                alert(value + "不是数字！");
+        }
+    </script>
+</head>
+<body>
+    <p>
+        使用JavaScript写HTML输出
+    </p>
+    <script>
+        document.write("<h1 style=\"text-align:center;color:red;\">标题</h1>");
+        document.write("<p>HTML内容</p>");
+    </script>
+    <p id="btn">
+        您只能在 HTML 输出流中使用 <strong>document.write</strong>。
+        如果您在文档已加载后使用它（比如在函数中），会覆盖整个文档。
+    </p>
+
+    <input type="button" value="事件示例" onclick="btnclick();" />
+    <hr />
+    <input type="button" value="改变HTML内容" onclick="changeHMTLValue();" />
+
+    <hr />
+    <img id="img" src="img/开.png" alt="点击图片切换状态" style="width:50px;" onclick="changeimg();" />
+    <hr />
+    <input type="button" value="改变HTML样式" onclick="changestyle();" />
+    <hr />
+    <input type="text" id="text" alt="请输入数字！" />
+    <input type="button" value="验证输入" onclick="isInputNumber();" />
+    
+
+    <hr />
+    <input type="button" value="文档加载完成后覆盖" onclick="recoverHTML();" />
+</body>
+</html>

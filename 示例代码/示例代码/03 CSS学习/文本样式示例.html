@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+
+    <style type="text/css">
+        div {
+            margin: 0px 0px;
+            padding: 0px 0px;
+            border: 1px solid red;
+            width: 400px;
+            height: 300px;
+        }
+
+        #test1 {
+            /*首行缩进，默认50像素*/
+            /*text-indent: 50px;*/
+            /*悬挂缩进*/
+            /*text-indent: -5em;
+            padding-left: 5em;*/
+            text-indent: 20%;
+        }
+
+        #test2 {
+            /*文本对齐*/
+            text-align: center;
+            /*字间隔*/
+            word-spacing: 0.5em;
+            /*字符间隔*/
+            letter-spacing: 10px;
+            /*字符转换*/
+            text-transform: uppercase;
+            /*文本装饰*/
+            text-decoration: underline overline line-through;
+            text-decoration-style: dotted;
+            /*处理空白符*/
+            white-space: pre;
+            /*文本方向*/
+            direction: rtl;
+        }
+
+        #test3 {
+            /*字体系列*/
+            font-family: 'Times New Roman', Times, serif;
+            /*字体风格*/
+            font-style: oblique;
+            /*
+                字体变形
+                小型大写字母不是一般的大写字母，也不是小写字母，这种字母采用不同大小的大写字母。
+            */
+            /*font-variant:small-caps;*/
+            /*字体加粗*/
+            /*font-weight: 100;*/
+            font-weight: 900;
+            font- /*weight: 400;
+            font-weight: 700;
+            font-we*/ ight: bold;
+        }
+
+        #sizetest1 {
+            /*如果您没有规定字体大小，普通文本（比如段落）的默认大小是 16 像素 (16px=1em)*/
+            font-size: 16px;
+            font-size: 1em;
+        }
+
+        #sizetest2 {
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p id="test1">这是一个很长的段落，需要进行首行缩进，测试使用！<br />测试测试测试测试测试测试测试测试测试测试测试测试</p>
+    </div>
+    <p id="test2">This  is Word Style Test!</p>
+    <p id="test3">Font-family Test!</p>
+
+    <p id="sizetest1">默认字体大小16px</p>
+    <p id="sizetest2">默认字体大小16px=1em</p>
+    <p id="sizetest3">Font-size Test!</p>
+    <p id="sizetest4">Font-size Test!</p>
+    <p id="sizetest5">Font-size Test!</p>
+
+
+</body>
+</html>

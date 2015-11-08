@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AJAX高级示例</title>
+    <meta charset="utf-8" />
+    <script>
+        function getResult(value) {
+
+            //当输入的姓氏为空时，清空已有结果并返回空。
+            if (value == null || value.trim() == "") {
+                document.getElementById("result").innerHTML = "";
+                return;
+            }
+
+            var xmlhttp;
+
+            if (window.XMLHttpRequest) {
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            //1.GET方式
+            xmlhttp.open("GET", "gethint.asp?q=" + value, true);
+            xmlhttp.send();
+
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("result").innerHTML = xmlhttp.responseText;
+                }
+            }
+
+            //2.POST方式
+            //xmlhttp.open("POST", "gethint.asp", true);
+            //xmlhttp.send("p=" + value);
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h3>请在下面的输入框中输入字母（A-Z)：</h3>
+        <form action="">
+            姓氏：<input id="text" type="text" onkeyup="getResult(this.value)" />
+            <p>
+                查询结果：
+                <span id="result">
+
+                </span>
+            </p>
+        </form>
+    </div>
+</body>
+</html>

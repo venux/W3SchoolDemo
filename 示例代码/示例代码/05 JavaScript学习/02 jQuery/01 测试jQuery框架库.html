@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>测试jQuery</title>
+    <meta charset="utf-8" />
+    <!--Google CDN 未翻墙无法查看-->
+    <!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>-->
+    <!--Microsoft CDN-->
+    <!--新浪 CDN-->
+    <!--<script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>-->
+    <!--百度 CDN-->
+    <!--<script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>-->
+    <!--为了保险起见，当无法从CDN服务器上获取jQuery时，则使用本地jQuery-->
+    <!--<script type="text/javascript">
+        window.jQuery || document.write('<script src="jquery-2.1.1.min.js"><\/script>');
+    </script>-->
+
+    <script src="jquery-2.1.1.min.js"></script>
+    <script>
+        $(document).ready(test);
+
+        function test() {
+            $("#text").html("Hello jQuery!");
+        };
+
+        function addAttr() {
+            //注意：传递进去的要素ID添加了#
+            $("#text").attr("style", "color:red");
+        }
+    </script>
+</head>
+<body>
+    <h3>jQuery引用：</h3>
+    <p>
+        从多个公共服务器中选择引用。
+        把jQuery存储在CDN公共库上可加快网站载入速度，CDN公共库是指将常用的JS库存放在CDN节点，以方便广大开发者直接调用。
+        与将JS库存放在服务器单机上相比，CDN公共库更加稳定、高速。
+        国外的有Google、Microsoft等多家公司给jQuery提供CDN服务，国内由新浪云计算(SAE) 、百度云(BAE)等提供。
+    </p>
+    <hr />
+    <h1 id="text"></h1>
+    <input id="btn" type="button" value="jQuery添加属性" onclick="addAttr()" />
+</body>
+</html>

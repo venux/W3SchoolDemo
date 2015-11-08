@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>表单验证示例</title>
+    <meta charset="utf-8" />
+    <style>
+        form {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            background-image: url("img/Koala.jpg");
+            width: 400px;
+            height: 300px;
+            vertical-align: auto;
+        }
+
+        input [type="text"][type="password"] {
+            width: 200px;
+            height: 50px;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        function checkValues() {
+            try {
+                var userNameElement = document.getElementById("userName")
+
+                if (userNameElement === undefined || userNameElement === null)
+                    throw "用户名不允许为空！";
+
+                var userName = userNameElement.value;
+
+                if (userName == null || userName.trim() == "")
+                    throw "用户名不允许为空！";
+
+                var passwordElement = document.getElementById("password");
+
+                if (passwordElement === undefined || passwordElement === null)
+                    throw "密码不允许为空！";
+
+                var password = passwordElement.value;
+
+                if (password == null || password.trim() == "")
+                    throw "密码不允许为空！";
+
+                if (password.trim().length < 6)
+                    throw "密码长度不允许小于6位！";
+
+                alert("注册成功！\n用户名：" + userName + "\n密码：" + password + "\n请保管好用户名和密码！");
+
+                clearValues();
+            }
+            catch (err) {
+                alert(err);
+            }
+        }
+
+        function clearValues() {
+            document.getElementById("userName").value = null;
+            document.getElementById("password").value = null;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        用户名：<input id="userName" type="text" />
+        <br />
+        密&nbsp;&nbsp;&nbsp;&nbsp;码：<input id="password" type="password" />
+        <br />
+        <input id="OK" type="submit" value="注册" onclick="checkValues();" />
+        &nbsp;
+        <input id="Reset" type="reset" value="重置" onclick="clearValues();" />
+    </form>
+</body>
+</html>
